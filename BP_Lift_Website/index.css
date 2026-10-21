@@ -238,9 +238,9 @@ img {
     box-shadow: var(--bp-shadow-sm);
     display: flex;
     flex-direction: column;
-    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), 
-                box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), 
-                border-color 0.3s ease;
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
+        box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
+        border-color 0.3s ease;
     isolation: isolate;
 }
 
@@ -295,12 +295,10 @@ img {
     left: -120%;
     width: 60%;
     height: 200%;
-    background: linear-gradient(
-        90deg,
-        transparent,
-        rgba(255, 255, 255, 0.32),
-        transparent
-    );
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(255, 255, 255, 0.32),
+            transparent);
     transform: rotate(25deg);
     pointer-events: none;
     opacity: 0;
@@ -315,6 +313,7 @@ img {
     0% {
         left: -120%;
     }
+
     100% {
         left: 180%;
     }
@@ -669,7 +668,6 @@ img {
     background: var(--bp-white);
     color: var(--bp-dark-blue);
     transform: translateY(-2px);
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
 }
 
 /* =====================================================
@@ -692,10 +690,10 @@ img {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), 
-                box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), 
-                border-color 0.35s ease,
-                border-top-color 0.35s ease;
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
+        box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
+        border-color 0.35s ease,
+        border-top-color 0.35s ease;
 }
 
 .service-box:hover {
@@ -736,6 +734,7 @@ img {
     0% {
         transform: translateY(0) scale(1.08);
     }
+
     100% {
         transform: translateY(-6px) scale(1.15);
     }
@@ -939,9 +938,11 @@ img {
     0% {
         box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
     }
+
     70% {
         box-shadow: 0 0 0 8px rgba(16, 185, 129, 0);
     }
+
     100% {
         box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
     }
@@ -1062,8 +1063,8 @@ img {
     transition: opacity 0.3s ease;
 }
 
-.products-slider-viewport.is-grid ~ .products-slider-dots,
-.products-slider-viewport.is-grid ~ .carousel-progress-track {
+.products-slider-viewport.is-grid~.products-slider-dots,
+.products-slider-viewport.is-grid~.carousel-progress-track {
     display: none;
 }
 
