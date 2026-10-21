@@ -1513,3 +1513,98 @@ img {
         line-height: 1.55;
     }
 }
+
+/* Keep About section buttons visible at all times */
+.about-home-actions .btn,
+.about-home-actions .btn-secondary {
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: inline-flex !important;
+    transform: none !important;
+    animation: none !important;
+    transition: none !important;
+}
+
+/* Keep the secondary button visible before hovering */
+.about-home-actions .btn-secondary {
+    background: rgba(255, 255, 255, 0.12) !important;
+    border: 1px solid rgba(255, 255, 255, 0.35) !important;
+    color: var(--bp-white) !important;
+    backdrop-filter: blur(8px);
+}
+
+/* Prevent hover styles from hiding the button */
+.about-home-actions .btn:hover,
+.about-home-actions .btn-secondary:hover {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 520px) {
+    .about-home-actions .btn {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+    }
+}
+
+/* ABOUT SECTION BUTTON — ALWAYS VISIBLE */
+.about-home-actions {
+    display: flex !important;
+    flex-wrap: wrap;
+    gap: 14px;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+    animation: none !important;
+}
+
+.about-home-actions .btn,
+.about-home-actions .btn-secondary {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 46px;
+    padding: 12px 20px;
+
+    background: #0759B5 !important;
+    color: #ffffff !important;
+    border: 1px solid #F28C28 !important;
+    border-radius: 5px;
+
+    opacity: 1 !important;
+    visibility: visible !important;
+    position: relative;
+    z-index: 10;
+
+    transform: none !important;
+    animation: none !important;
+    transition: none !important;
+    pointer-events: auto !important;
+    text-decoration: none !important;
+}
+
+/* Keep the button visible on hover too */
+.about-home-actions .btn:hover,
+.about-home-actions .btn-secondary:hover {
+    background: #06458F !important;
+    color: #ffffff !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+}
+
+@media (max-width: 520px) {
+    .about-home-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .about-home-actions .btn {
+        width: 100%;
+        text-align: center;
+    }
+}
