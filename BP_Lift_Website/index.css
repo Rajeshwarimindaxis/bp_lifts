@@ -230,6 +230,7 @@ img {
 }
 
 .card {
+    position: relative;
     background: var(--bp-card-bg);
     border: 1px solid var(--bp-border);
     border-radius: var(--bp-radius-lg);
@@ -237,13 +238,35 @@ img {
     box-shadow: var(--bp-shadow-sm);
     display: flex;
     flex-direction: column;
-    transition: transform var(--bp-transition), box-shadow var(--bp-transition), border-color var(--bp-transition);
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), 
+                box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), 
+                border-color 0.3s ease;
+    isolation: isolate;
+}
+
+/* Elevator "Lift Beam" vertical accent line climbing upward on hover */
+.card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 0;
+    background: linear-gradient(180deg, #2D9CDB, #00C6FF, #F2C94C);
+    border-radius: 4px;
+    transition: height 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+    z-index: 5;
+    box-shadow: 0 0 12px rgba(45, 156, 219, 0.85);
+}
+
+.card:hover::before {
+    height: 100%;
 }
 
 .card:hover {
     transform: translateY(-8px);
-    box-shadow: var(--bp-shadow-hover);
-    border-color: var(--bp-light-blue);
+    box-shadow: 0 20px 38px -10px rgba(11, 26, 69, 0.18), 0 0 22px rgba(45, 156, 219, 0.16);
+    border-color: rgba(45, 156, 219, 0.5);
 }
 
 .card-img {
@@ -257,11 +280,44 @@ img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.45s ease;
+    transition: transform 0.55s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 .card:hover .card-img img {
-    transform: scale(1.07);
+    transform: scale(1.08);
+}
+
+/* Diagonal luxury shimmer beam sweeping across image on hover */
+.card-img::after {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -120%;
+    width: 60%;
+    height: 200%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.32),
+        transparent
+    );
+    transform: rotate(25deg);
+    pointer-events: none;
+    opacity: 0;
+}
+
+.card:hover .card-img::after {
+    opacity: 1;
+    animation: cardShimmer 0.85s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes cardShimmer {
+    0% {
+        left: -120%;
+    }
+    100% {
+        left: 180%;
+    }
 }
 
 .card-body {
@@ -484,6 +540,7 @@ img {
 }
 
 .service-box {
+    position: relative;
     background: var(--bp-card-bg);
     border: 1px solid var(--bp-border);
     border-top: 4px solid var(--bp-light-blue);
@@ -493,13 +550,24 @@ img {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    transition: transform var(--bp-transition), box-shadow var(--bp-transition), border-top-color var(--bp-transition);
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), 
+                box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), 
+                border-color 0.35s ease,
+                border-top-color 0.35s ease;
 }
 
 .service-box:hover {
     transform: translateY(-8px);
-    box-shadow: var(--bp-shadow-hover);
+    box-shadow: 0 18px 34px -8px rgba(11, 26, 69, 0.15), 0 0 20px rgba(45, 156, 219, 0.15);
     border-top-color: var(--bp-dark-blue);
+    border-color: rgba(45, 156, 219, 0.4);
+}
+
+/* Subtle rotating spotlight scanner accent */
+.service-box.spotlight-active {
+    border-color: rgba(45, 156, 219, 0.8);
+    box-shadow: 0 14px 30px rgba(45, 156, 219, 0.22);
+    transform: translateY(-4px);
 }
 
 .service-box-icon {
@@ -515,6 +583,20 @@ img {
     font-size: 22px;
     margin-bottom: 20px;
     box-shadow: 0 4px 12px rgba(2, 100, 173, 0.12);
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.service-box:hover .service-box-icon {
+    animation: iconFloat 2.2s ease-in-out infinite alternate;
+}
+
+@keyframes iconFloat {
+    0% {
+        transform: translateY(0) scale(1.08);
+    }
+    100% {
+        transform: translateY(-6px) scale(1.15);
+    }
 }
 
 .service-box h3 {
@@ -632,11 +714,251 @@ img {
 }
 
 /* =====================================================
+   INTERACTIVE CAROUSEL & CARD ANIMATIONS
+===================================================== */
+/* Staggered Scroll-Triggered Entrance Reveal */
+.reveal-card {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.65s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.65s cubic-bezier(0.2, 0.8, 0.2, 1);
+    will-change: opacity, transform;
+}
+
+.reveal-card.is-revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Stats Card Hover Interaction */
+.stat-card {
+    position: relative;
+    transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.3s ease;
+    overflow: hidden;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 26px rgba(11, 26, 69, 0.12);
+    border-color: rgba(45, 156, 219, 0.4);
+}
+
+.stat-card:hover .stat-number {
+    color: #0077b6;
+}
+
+/* Carousel Header Layout & Toolbar */
+.products-header-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 24px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+}
+
+.products-carousel-toolbar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.carousel-status-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(45, 156, 219, 0.1);
+    border: 1px solid rgba(45, 156, 219, 0.3);
+    padding: 7px 15px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--bp-dark-blue);
+    user-select: none;
+    transition: all 0.3s ease;
+}
+
+.carousel-status-pill .pulse-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #10b981;
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+    animation: statusPulse 1.8s infinite;
+}
+
+.carousel-status-pill.is-paused .pulse-dot {
+    background: #f59e0b;
+    box-shadow: none;
+    animation: none;
+}
+
+@keyframes statusPulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 8px rgba(16, 185, 129, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+    }
+}
+
+.carousel-nav-controls {
+    display: flex;
+    gap: 8px;
+}
+
+.carousel-nav-btn {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    border: 1px solid var(--bp-border);
+    background: #ffffff;
+    color: var(--bp-dark-blue);
+    font-size: 22px;
+    font-weight: 300;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    transition: all 0.25s ease;
+}
+
+.carousel-nav-btn:hover {
+    background: var(--bp-dark-blue);
+    color: #ffffff;
+    border-color: var(--bp-dark-blue);
+    transform: scale(1.08);
+}
+
+.view-toggle-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #ffffff;
+    border: 1px solid var(--bp-border);
+    color: var(--bp-dark-blue);
+    padding: 8px 15px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    transition: all 0.25s ease;
+}
+
+.view-toggle-btn:hover {
+    background: #f1f5f9;
+    border-color: var(--bp-light-blue);
+}
+
+.carousel-progress-track {
+    width: 100%;
+    height: 4px;
+    background: rgba(11, 26, 69, 0.08);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 22px;
+    transition: opacity 0.3s ease;
+}
+
+.carousel-progress-fill {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #0b1a45, #2D9CDB, #00C6FF);
+    border-radius: 4px;
+    transition: width 0.05s linear;
+}
+
+.products-slider-viewport {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    padding: 6px 4px 18px;
+    border-radius: var(--bp-radius-lg);
+}
+
+/* Slider Track: exactly 2 products per row horizontally sliding */
+.products-slider-viewport:not(.is-grid) .products-slider-track {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 32px;
+    transition: transform 0.65s cubic-bezier(0.25, 1, 0.5, 1);
+    will-change: transform;
+}
+
+.products-slider-viewport:not(.is-grid) .card {
+    flex: 0 0 calc((100% - 32px) / 2);
+    min-width: calc((100% - 32px) / 2);
+    max-width: calc((100% - 32px) / 2);
+}
+
+/* Toggled to Grid mode: displays standard 2-column grid showing all 6 */
+.products-slider-viewport.is-grid .products-slider-track {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+    transform: none !important;
+}
+
+.products-slider-viewport.is-grid .card {
+    flex: initial;
+    min-width: initial;
+    max-width: initial;
+}
+
+.products-slider-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 24px;
+    transition: opacity 0.3s ease;
+}
+
+.products-slider-viewport.is-grid ~ .products-slider-dots,
+.products-slider-viewport.is-grid ~ .carousel-progress-track {
+    display: none;
+}
+
+.slider-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 999px;
+    background: #cbd5e1;
+    border: none;
+    cursor: pointer;
+    transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+    padding: 0;
+}
+
+.slider-dot.active {
+    width: 36px;
+    background: linear-gradient(90deg, var(--bp-dark-blue), var(--bp-light-blue));
+    box-shadow: 0 2px 8px rgba(45, 156, 219, 0.4);
+}
+
+/* =====================================================
    RESPONSIVE DESIGN (index.css)
 ===================================================== */
 @media (max-width: 1050px) {
     .section {
         padding: 70px 0;
+    }
+
+    .products-header-wrap {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .products-carousel-toolbar {
+        width: 100%;
+        justify-content: space-between;
     }
 
     .grid-3 {
@@ -679,6 +1001,32 @@ img {
     .grid-3 {
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 18px;
+    }
+
+    .products-slider-viewport:not(.is-grid) .products-slider-track {
+        gap: 18px;
+    }
+
+    .products-slider-viewport:not(.is-grid) .card {
+        flex: 0 0 calc((100% - 18px) / 2);
+        min-width: calc((100% - 18px) / 2);
+        max-width: calc((100% - 18px) / 2);
+    }
+
+    .carousel-status-pill {
+        font-size: 11.5px;
+        padding: 5px 10px;
+    }
+
+    .carousel-nav-btn {
+        width: 32px;
+        height: 32px;
+        font-size: 18px;
+    }
+
+    .view-toggle-btn {
+        padding: 6px 11px;
+        font-size: 11.5px;
     }
 
     .card-img {
@@ -786,6 +1134,36 @@ img {
     .grid-3 {
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 10px;
+    }
+
+    .products-slider-viewport:not(.is-grid) .products-slider-track {
+        gap: 10px;
+    }
+
+    .products-slider-viewport:not(.is-grid) .card {
+        flex: 0 0 calc((100% - 10px) / 2);
+        min-width: calc((100% - 10px) / 2);
+        max-width: calc((100% - 10px) / 2);
+    }
+
+    .products-carousel-toolbar {
+        gap: 6px;
+    }
+
+    .carousel-status-pill {
+        font-size: 10px;
+        padding: 4px 8px;
+    }
+
+    .carousel-nav-btn {
+        width: 30px;
+        height: 30px;
+        font-size: 16px;
+    }
+
+    .view-toggle-btn {
+        font-size: 10px;
+        padding: 4px 8px;
     }
 
     .card-img {

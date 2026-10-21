@@ -103,19 +103,19 @@
     <section class="section section-soft" style="padding: 40px 0 20px;">
       <div class="container">
         <div class="stats-grid">
-          <div class="stat-card">
-            <div class="stat-number">24+</div>
+          <div class="stat-card reveal-card">
+            <div class="stat-number" data-target="24" data-suffix="+">24+</div>
             <div class="stat-label">Years of Industry Trust</div>
           </div>
-          <div class="stat-card">
-            <div class="stat-number">500+</div>
+          <div class="stat-card reveal-card">
+            <div class="stat-number" data-target="500" data-suffix="+">500+</div>
             <div class="stat-label">Elevators Across Pune</div>
           </div>
-          <div class="stat-card">
-            <div class="stat-number">100%</div>
+          <div class="stat-card reveal-card">
+            <div class="stat-number" data-target="100" data-suffix="%">100%</div>
             <div class="stat-label">Component Testing</div>
           </div>
-          <div class="stat-card">
+          <div class="stat-card reveal-card">
             <div class="stat-number">24/7</div>
             <div class="stat-label">Prompt After-Sales Care</div>
           </div>
@@ -133,7 +133,7 @@
 
         <div class="services-grid-home">
           <!-- 1. ELEVATOR REPAIRS -->
-          <div class="service-box">
+          <div class="service-box reveal-card">
             <div>
               <div class="service-box-icon">🔧</div>
               <h3>Elevator Repairs</h3>
@@ -144,7 +144,7 @@
           </div>
 
           <!-- 2. ANNUAL MAINTENANCE -->
-          <div class="service-box">
+          <div class="service-box reveal-card">
             <div>
               <div class="service-box-icon">🛡️</div>
               <h3>Annual Maintenance (AMC)</h3>
@@ -155,7 +155,7 @@
           </div>
 
           <!-- 3. MODERNIZATION / UPGRADATION -->
-          <div class="service-box">
+          <div class="service-box reveal-card">
             <div>
               <div class="service-box-icon">⚡</div>
               <h3>Modernization / Upgradation</h3>
@@ -166,7 +166,7 @@
           </div>
 
           <!-- 4. NEW INSTALLATIONS -->
-          <div class="service-box">
+          <div class="service-box reveal-card">
             <div>
               <div class="service-box-icon">🏗️</div>
               <h3>New Installations</h3>
@@ -182,98 +182,131 @@
     <!-- OUR PRODUCTS SECTION (6 CORE PRODUCTS FROM BROCHURE) -->
     <section class="section section-soft" id="products">
       <div class="container">
-        <div class="section-head">
-          <div class="eyebrow">Our Products</div>
-          <h2>Engineered For Every Building &amp; Load Requirement</h2>
-          <p>Explore our complete elevator product line designed in accordance with strict international safety
-            standards and architectural elegance.</p>
+        <div class="section-head products-header-wrap">
+          <div>
+            <div class="eyebrow">Our Products</div>
+            <h2>Engineered For Every Building &amp; Load Requirement</h2>
+            <p>Explore our complete elevator product line designed in accordance with strict international safety
+              standards and architectural elegance.</p>
+          </div>
+
+          <!-- Carousel Controls & Interactive View Toggle -->
+          <div class="products-carousel-toolbar">
+            <div class="carousel-status-pill" id="carouselStatus" title="Status of card slider">
+              <span class="pulse-dot"></span>
+              <span class="status-text">Auto-Scrolling</span>
+            </div>
+            <div class="carousel-nav-controls">
+              <button type="button" class="carousel-nav-btn prev-btn" id="prodPrevBtn" aria-label="Previous products" title="Previous products">‹</button>
+              <button type="button" class="carousel-nav-btn next-btn" id="prodNextBtn" aria-label="Next products" title="Next products">›</button>
+            </div>
+            <button type="button" class="view-toggle-btn" id="viewToggleBtn" aria-label="Toggle between auto-slider and grid view" title="Switch layout">
+              <span class="view-icon">⊞</span>
+              <span class="view-label">Grid View</span>
+            </button>
+          </div>
         </div>
 
-        <div class="grid-3">
-          <!-- 1. Passenger -->
-          <article class="card">
-            <div class="card-img">
-              <img loading="lazy"
-                src="https://media.istockphoto.com/id/523783327/photo/administrative-workers-smiling-in-elevator.jpg?s=170667a&w=0&k=20&c=rnMBOjRauPWeAwKF8XWBetefYHIlkX_GxK6dknkR7TA="
-                alt="Passenger Elevators">
-            </div>
-            <div class="card-body">
-              <h3>Passenger Elevators</h3>
-              <p>Passenger lifts provide smooth, safe, and comfortable vertical transportation with manual or automatic
-                doors, designed for reliable performance and modern buildings.</p>
-              <a class="text-link" href="products.html#passenger">Explore Passenger Elevators <span>→</span></a>
-            </div>
-          </article>
+        <!-- Timer progress bar for smooth auto-scroll -->
+        <div class="carousel-progress-track" id="carouselProgressTrack">
+          <div class="carousel-progress-fill" id="carouselProgress"></div>
+        </div>
 
-          <!-- 2. Goods -->
-          <article class="card">
-            <div class="card-img">
-              <img loading="lazy"
-                src="https://5.imimg.com/data5/SELLER/Default/2024/11/467856465/HE/YP/LT/126254231/commercial-goods-lift-1000x1000.jpg"
-                alt="Goods Elevators">
-            </div>
-            <div class="card-body">
-              <h3>Goods Elevators</h3>
-              <p>Durable goods lifts with high load capacity, customizable finishes, and budget-friendly options for
-                industrial and commercial needs.</p>
-              <a class="text-link" href="products.html#goods">Explore Goods Elevators <span>→</span></a>
-            </div>
-          </article>
+        <!-- Slider Viewport: Keeps exactly 2 products in one row sliding smoothly -->
+        <div class="products-slider-viewport" id="productsViewport">
+          <div class="products-slider-track" id="productsTrack">
+            <!-- 1. Passenger -->
+            <article class="card reveal-card">
+              <div class="card-img">
+                <img loading="lazy"
+                  src="https://media.istockphoto.com/id/523783327/photo/administrative-workers-smiling-in-elevator.jpg?s=170667a&w=0&k=20&c=rnMBOjRauPWeAwKF8XWBetefYHIlkX_GxK6dknkR7TA="
+                  alt="Passenger Elevators">
+              </div>
+              <div class="card-body">
+                <h3>Passenger Elevators</h3>
+                <p>Passenger lifts provide smooth, safe, and comfortable vertical transportation with manual or automatic
+                  doors, designed for reliable performance and modern buildings.</p>
+                <a class="text-link" href="products.html#passenger">Explore Passenger Elevators <span>→</span></a>
+              </div>
+            </article>
 
-          <!-- 3. Home -->
-          <article class="card">
-            <div class="card-img">
-              <img loading="lazy"
-                src="https://tse1.mm.bing.net/th/id/OIP.SI5IVNrHRQ_gCzKectjDCgHaJ4?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
-                alt="Home Elevators">
-            </div>
-            <div class="card-body">
-              <h3>Home Elevators</h3>
-              <p>Compact, energy-efficient home lifts for villas, bungalows, and duplexes, featuring gearless
-                technology, no machine room requirement, and single-phase power compatibility.</p>
-              <a class="text-link" href="products.html#home">Explore Home Elevators <span>→</span></a>
-            </div>
-          </article>
+            <!-- 2. Goods -->
+            <article class="card reveal-card">
+              <div class="card-img">
+                <img loading="lazy"
+                  src="https://5.imimg.com/data5/SELLER/Default/2024/11/467856465/HE/YP/LT/126254231/commercial-goods-lift-1000x1000.jpg"
+                  alt="Goods Elevators">
+              </div>
+              <div class="card-body">
+                <h3>Goods Elevators</h3>
+                <p>Durable goods lifts with high load capacity, customizable finishes, and budget-friendly options for
+                  industrial and commercial needs.</p>
+                <a class="text-link" href="products.html#goods">Explore Goods Elevators <span>→</span></a>
+              </div>
+            </article>
 
-          <!-- 4. Hospital -->
-          <article class="card">
-            <div class="card-img">
-              <img loading="lazy" src="https://www.carrymaxlifts.com/img/products/hospital-elevator.jpg"
-                alt="Hospital Elevators">
-            </div>
-            <div class="card-body">
-              <h3>Hospital Elevators</h3>
-              <p>Reliable hospital lifts designed for smooth, safe patient transportation, ensuring dependable
-                performance in hospitals, clinics, and nursing homes.</p>
-              <a class="text-link" href="products.html#hospital">Explore Hospital Elevators <span>→</span></a>
-            </div>
-          </article>
+            <!-- 3. Home -->
+            <article class="card reveal-card">
+              <div class="card-img">
+                <img loading="lazy"
+                  src="https://tse1.mm.bing.net/th/id/OIP.SI5IVNrHRQ_gCzKectjDCgHaJ4?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+                  alt="Home Elevators">
+              </div>
+              <div class="card-body">
+                <h3>Home Elevators</h3>
+                <p>Compact, energy-efficient home lifts for villas, bungalows, and duplexes, featuring gearless
+                  technology, no machine room requirement, and single-phase power compatibility.</p>
+                <a class="text-link" href="products.html#home">Explore Home Elevators <span>→</span></a>
+              </div>
+            </article>
 
-          <!-- 5. Car -->
-          <article class="card">
-            <div class="card-img">
-              <img loading="lazy" src="images/car_elevator.jpg" alt="Car Elevators">
-            </div>
-            <div class="card-body">
-              <h3>Car Elevators</h3>
-              <p>Durable, high-performance vehicle lifts built with premium materials and advanced technology, offering
-                innovative designs for diverse automotive needs.</p>
-              <a class="text-link" href="products.html#car">Explore Car Elevators <span>→</span></a>
-            </div>
-          </article>
+            <!-- 4. Hospital -->
+            <article class="card reveal-card">
+              <div class="card-img">
+                <img loading="lazy" src="https://www.carrymaxlifts.com/img/products/hospital-elevator.jpg"
+                  alt="Hospital Elevators">
+              </div>
+              <div class="card-body">
+                <h3>Hospital Elevators</h3>
+                <p>Reliable hospital lifts designed for smooth, safe patient transportation, ensuring dependable
+                  performance in hospitals, clinics, and nursing homes.</p>
+                <a class="text-link" href="products.html#hospital">Explore Hospital Elevators <span>→</span></a>
+              </div>
+            </article>
 
-          <!-- 6. Dumbwaiter -->
-          <article class="card">
-            <div class="card-img">
-              <img loading="lazy" src="images/dumbwaiter.jpg" alt="Dumbwaiter Elevators">
-            </div>
-            <div class="card-body">
-              <h3>Dumbwaiter Elevators</h3>
-              <p>Compact dumbwaiter lifts for effortlessly transporting food, laundry, and other goods between floors
-                with convenient push-button operation.</p>
-              <a class="text-link" href="products.html#dumbwaiter">Explore Dumbwaiter Elevators <span>→</span></a>
-            </div>
-          </article>
+            <!-- 5. Car -->
+            <article class="card reveal-card">
+              <div class="card-img">
+                <img loading="lazy" src="images/car_elevator.jpg" alt="Car Elevators">
+              </div>
+              <div class="card-body">
+                <h3>Car Elevators</h3>
+                <p>Durable, high-performance vehicle lifts built with premium materials and advanced technology, offering
+                  innovative designs for diverse automotive needs.</p>
+                <a class="text-link" href="products.html#car">Explore Car Elevators <span>→</span></a>
+              </div>
+            </article>
+
+            <!-- 6. Dumbwaiter -->
+            <article class="card reveal-card">
+              <div class="card-img">
+                <img loading="lazy" src="images/dumbwaiter.jpg" alt="Dumbwaiter Elevators">
+              </div>
+              <div class="card-body">
+                <h3>Dumbwaiter Elevators</h3>
+                <p>Compact dumbwaiter lifts for effortlessly transporting food, laundry, and other goods between floors
+                  with convenient push-button operation.</p>
+                <a class="text-link" href="products.html#dumbwaiter">Explore Dumbwaiter Elevators <span>→</span></a>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <!-- Slider Pagination Dots -->
+        <div class="products-slider-dots" id="productsDots" aria-label="Slide indicators">
+          <button type="button" class="slider-dot active" data-slide="0" aria-label="Slide 1: Passenger &amp; Goods"></button>
+          <button type="button" class="slider-dot" data-slide="1" aria-label="Slide 2: Home &amp; Hospital"></button>
+          <button type="button" class="slider-dot" data-slide="2" aria-label="Slide 3: Car &amp; Dumbwaiter"></button>
         </div>
       </div>
     </section>
@@ -386,7 +419,6 @@
     <a href="tel:+918605603330" class="float-btn float-call" title="Call BP LIFTS: +91 860 560 3330">
       <span class="float-icon">📞</span>
     </a>
-    </a>
     <a href="mailto:info@bplifts.co.in" class="float-btn float-email" title="Send Email: info@bplifts.co.in">
       <span class="float-icon">✉</span>
     </a>
@@ -397,6 +429,266 @@
 
   <script>
     document.querySelectorAll('.nav-links [data-page="home"]').forEach(link => link.classList.add('active'));
+
+    // ========================================================
+    // 1. STATS NUMBER COUNT-UP ANIMATION
+    // ========================================================
+    function initStatsCounter() {
+      const statsSection = document.querySelector('.stats-grid');
+      let animated = false;
+
+      function runCountUp() {
+        const counters = document.querySelectorAll('.stat-number[data-target]');
+        counters.forEach(counter => {
+          const target = parseInt(counter.getAttribute('data-target'), 10);
+          const suffix = counter.getAttribute('data-suffix') || '';
+          const duration = 1600;
+          const startTime = performance.now();
+
+          function step(now) {
+            const elapsed = now - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            // easeOutCubic
+            const ease = 1 - Math.pow(1 - progress, 3);
+            const val = Math.floor(ease * target);
+            counter.textContent = val + suffix;
+            if (progress < 1) {
+              requestAnimationFrame(step);
+            } else {
+              counter.textContent = target + suffix;
+            }
+          }
+          requestAnimationFrame(step);
+        });
+      }
+
+      if (statsSection && 'IntersectionObserver' in window) {
+        const obs = new IntersectionObserver((entries) => {
+          if (entries[0].isIntersecting && !animated) {
+            animated = true;
+            runCountUp();
+            obs.disconnect();
+          }
+        }, { threshold: 0.25 });
+        obs.observe(statsSection);
+      } else {
+        runCountUp();
+      }
+    }
+
+    // ========================================================
+    // 2. STAGGERED SCROLL REVEAL ANIMATIONS
+    // ========================================================
+    function initScrollReveal() {
+      const reveals = document.querySelectorAll('.reveal-card');
+      if ('IntersectionObserver' in window) {
+        const obs = new IntersectionObserver((entries) => {
+          entries.forEach((entry, i) => {
+            if (entry.isIntersecting) {
+              setTimeout(() => {
+                entry.target.classList.add('is-revealed');
+              }, (i % 4) * 90);
+              obs.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.12 });
+        reveals.forEach(el => obs.observe(el));
+      } else {
+        reveals.forEach(el => el.classList.add('is-revealed'));
+      }
+    }
+
+    // ========================================================
+    // 3. SERVICE BOXES ROTATING SPOTLIGHT
+    // ========================================================
+    function initServicesSpotlight() {
+      const boxes = document.querySelectorAll('.services-grid-home .service-box');
+      if (!boxes.length) return;
+      let activeIndex = 0;
+      let userHovering = false;
+
+      boxes.forEach(box => {
+        box.addEventListener('mouseenter', () => {
+          userHovering = true;
+          boxes.forEach(b => b.classList.remove('spotlight-active'));
+        });
+        box.addEventListener('mouseleave', () => {
+          userHovering = false;
+        });
+      });
+
+      setInterval(() => {
+        if (userHovering) return;
+        boxes.forEach(b => b.classList.remove('spotlight-active'));
+        if (boxes[activeIndex]) {
+          boxes[activeIndex].classList.add('spotlight-active');
+        }
+        activeIndex = (activeIndex + 1) % boxes.length;
+      }, 3200);
+    }
+
+    // ========================================================
+    // 4. PRODUCTS AUTO-SCROLLING 2-IN-ROW CAROUSEL & VIEW TOGGLE
+    // ========================================================
+    function initProductsCarousel() {
+      const viewport = document.getElementById('productsViewport');
+      const track = document.getElementById('productsTrack');
+      const dots = document.querySelectorAll('.slider-dot');
+      const prevBtn = document.getElementById('prodPrevBtn');
+      const nextBtn = document.getElementById('prodNextBtn');
+      const statusPill = document.getElementById('carouselStatus');
+      const statusText = statusPill ? statusPill.querySelector('.status-text') : null;
+      const progressFill = document.getElementById('carouselProgress');
+      const viewToggleBtn = document.getElementById('viewToggleBtn');
+
+      if (!viewport || !track) return;
+
+      const totalSlides = 3; // 6 products / 2 per slide = 3 slides
+      let currentSlide = 0;
+      let isPaused = false;
+      let isGridMode = false;
+      const slideDuration = 4000;
+      let elapsed = 0;
+      const tick = 40;
+
+      function updateSlide(animate = true) {
+        if (isGridMode) return;
+        const cards = track.querySelectorAll('.card');
+        if (!cards.length) return;
+
+        const targetCard = cards[currentSlide * 2] || cards[0];
+        const offset = targetCard.offsetLeft - cards[0].offsetLeft;
+
+        track.style.transition = animate ? 'transform 0.65s cubic-bezier(0.25, 1, 0.5, 1)' : 'none';
+        track.style.transform = `translateX(-${offset}px)`;
+
+        dots.forEach((dot, idx) => {
+          dot.classList.toggle('active', idx === currentSlide);
+        });
+      }
+
+      function nextSlide() {
+        currentSlide = (currentSlide + 1) % totalSlides;
+        elapsed = 0;
+        if (progressFill) progressFill.style.width = '0%';
+        updateSlide(true);
+      }
+
+      function prevSlide() {
+        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+        elapsed = 0;
+        if (progressFill) progressFill.style.width = '0%';
+        updateSlide(true);
+      }
+
+      function goTo(index) {
+        currentSlide = index;
+        elapsed = 0;
+        if (progressFill) progressFill.style.width = '0%';
+        updateSlide(true);
+      }
+
+      // 4-second auto-scroll timer ticker
+      setInterval(() => {
+        if (isPaused || isGridMode) return;
+        elapsed += tick;
+        const pct = Math.min((elapsed / slideDuration) * 100, 100);
+        if (progressFill) progressFill.style.width = pct + '%';
+        if (elapsed >= slideDuration) {
+          nextSlide();
+        }
+      }, tick);
+
+      // Pause on hover
+      viewport.addEventListener('mouseenter', () => {
+        if (isGridMode) return;
+        isPaused = true;
+        if (statusPill) statusPill.classList.add('is-paused');
+        if (statusText) statusText.textContent = 'Paused (Hover)';
+      });
+
+      viewport.addEventListener('mouseleave', () => {
+        if (isGridMode) return;
+        isPaused = false;
+        if (statusPill) statusPill.classList.remove('is-paused');
+        if (statusText) statusText.textContent = 'Auto-Scrolling';
+      });
+
+      // Controls
+      if (nextBtn) nextBtn.addEventListener('click', nextSlide);
+      if (prevBtn) prevBtn.addEventListener('click', prevSlide);
+
+      dots.forEach(dot => {
+        dot.addEventListener('click', () => {
+          const s = parseInt(dot.getAttribute('data-slide'), 10);
+          if (!isNaN(s)) goTo(s);
+        });
+      });
+
+      // Layout Toggle (Auto-Slider vs Grid View)
+      if (viewToggleBtn) {
+        viewToggleBtn.addEventListener('click', () => {
+          isGridMode = !isGridMode;
+          if (isGridMode) {
+            viewport.classList.add('is-grid');
+            viewToggleBtn.querySelector('.view-icon').textContent = '⇄';
+            viewToggleBtn.querySelector('.view-label').textContent = 'Auto-Slider';
+            if (statusPill) statusPill.classList.add('is-paused');
+            if (statusText) statusText.textContent = 'Grid View (All)';
+            if (progressFill) progressFill.style.width = '0%';
+            track.style.transform = 'none';
+          } else {
+            viewport.classList.remove('is-grid');
+            viewToggleBtn.querySelector('.view-icon').textContent = '⊞';
+            viewToggleBtn.querySelector('.view-label').textContent = 'Grid View';
+            if (statusPill) statusPill.classList.remove('is-paused');
+            if (statusText) statusText.textContent = 'Auto-Scrolling';
+            elapsed = 0;
+            updateSlide(false);
+          }
+        });
+      }
+
+      // Touch swipe support for mobile
+      let touchStartX = 0;
+      viewport.addEventListener('touchstart', e => {
+        touchStartX = e.changedTouches[0].screenX;
+      }, { passive: true });
+
+      viewport.addEventListener('touchend', e => {
+        const touchEndX = e.changedTouches[0].screenX;
+        if (touchEndX - touchStartX < -45) {
+          nextSlide();
+        } else if (touchEndX - touchStartX > 45) {
+          prevSlide();
+        }
+      }, { passive: true });
+
+      window.addEventListener('resize', () => {
+        if (!isGridMode) {
+          updateSlide(false);
+        }
+      });
+
+      // Initial alignment
+      setTimeout(() => updateSlide(false), 80);
+    }
+
+    // Initialize all enhancements
+    let isInitialized = false;
+    function initAllAnimations() {
+      if (isInitialized) return;
+      isInitialized = true;
+      initStatsCounter();
+      initScrollReveal();
+      initServicesSpotlight();
+      initProductsCarousel();
+    }
+
+    document.addEventListener('DOMContentLoaded', initAllAnimations);
+    if (document.readyState === 'complete' || document.readyState === 'interactive') {
+      initAllAnimations();
+    }
   </script>
 </body>
 
