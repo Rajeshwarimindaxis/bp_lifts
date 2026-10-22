@@ -17,18 +17,13 @@
   <div class="topbar">
     <div class="container topbar-inner">
       <div class="topbar-track" aria-label="Contact details">
-        <span class="topbar-item">☎ <b>Call:</b> <a href="tel:+918605603330">+91 860 560 3330</a> / <a
-            href="tel:02025469524">(020) 2546 9524</a></span>
-        <span class="topbar-item">✉ <b>Email:</b> <a href="mailto:info@bplifts.co.in">info@bplifts.co.in</a></span>
+        <span class="topbar-item">☎ <b>Call:</b> <a href="tel:+919730496789">+91 97304 96789</a> / <a
+            href="tel:+919370250537">+91 93702 50537</a></span>
+        <span class="topbar-item">✉ <b>Email:</b> <a href="mailto:bpliftspune@gmail.com">bpliftspune@gmail.com</a></span>
         <span class="topbar-item">📍 <b>Location:</b> Karvenagar, Pune - 411052</span>
         <span class="topbar-item">🏢 <b>500+ Lifts across Pune &amp; Still Growing</b> · 24 Years Experience</span>
-        <span class="topbar-item">☎ <b>Call:</b> <a href="tel:+918605603330">+91 860 560 3330</a></span>
-        <span class="topbar-item">✉ <b>Email:</b> <a href="mailto:info@bplifts.co.in">info@bplifts.co.in</a></span>
-      </div>
-      <div class="topbar-social" aria-label="Social links">
-        <a class="social-dot" href="#" aria-label="Instagram">ig</a>
-        <a class="social-dot" href="#" aria-label="Facebook">f</a>
-        <a class="social-dot" href="#" aria-label="LinkedIn">in</a>
+        <span class="topbar-item">☎ <b>Call:</b> <a href="tel:+919730496789">+91 97304 96789</a></span>
+        <span class="topbar-item">✉ <b>Email:</b> <a href="mailto:bpliftspune@gmail.com">bpliftspune@gmail.com</a></span>
       </div>
     </div>
   </div>
@@ -53,12 +48,12 @@
           <div class="dropdown-menu" role="menu">
             <a href="products.html" class="dropdown-all">All Products <span>→</span></a>
             <div class="dropdown-divider"></div>
-            <a href="products.html#passenger">Passenger Elevators</a>
-            <a href="products.html#goods">Goods Elevators</a>
-            <a href="products.html#home">Home Elevators</a>
-            <a href="products.html#hospital">Hospital Elevators</a>
-            <a href="products.html#car">Car Elevators</a>
-            <a href="products.html#dumbwaiter">Dumbwaiter Elevators</a>
+            <a href="product-passenger.html">Passenger Elevators</a>
+            <a href="product-goods.html">Goods Elevators</a>
+            <a href="product-home.html">Home Elevators</a>
+            <a href="product-hospital.html">Hospital Elevators</a>
+            <a href="product-car.html">Car Elevators</a>
+            <a href="product-dumbwaiter.html">Dumbwaiter Elevators</a>
           </div>
         </div>
 
@@ -89,125 +84,372 @@
     <!-- PAGE HERO -->
     <section class="page-hero">
       <div class="container">
-        <div class="crumb"><a href="index.html">Home</a> / Our Products</div>
-        <h1>Innovative Lift Solutions for Every Building</h1>
-        <p>At BP LIFTS, we deliver reliable, safe, and efficient elevator solutions tailored to your needs. From modern
+        <div class="crumb reveal-fade-up"><a href="index.html">Home</a> / Our Products</div>
+        <h1 class="reveal-fade-up">Innovative Lift Solutions for <span class="hero-shimmer">Every Building</span></h1>
+        <p class="reveal-fade-up">At BP LIFTS, we deliver reliable, safe, and efficient elevator solutions tailored to your needs. From modern
           residential spaces to commercial buildings, our focus is on quality engineering, smooth performance, and
           dependable service that keeps you moving upward.</p>
+        <div class="hero-live-badge reveal-fade-up">
+          <span class="live-dot"></span>
+          <span><b>500+ Active Lifts</b> in Pune · 100% Component Tested · 24/7 Rapid Response</span>
+        </div>
       </div>
     </section>
 
     <!-- 6 CORE PRODUCTS SECTION -->
     <section class="section">
       <div class="container">
-        <div class="section-head">
+        <div class="section-head reveal-fade-up">
           <div class="eyebrow">Our Products</div>
           <h2>Engineered For Every Architectural Journey</h2>
           <p>Explore the full portfolio of BP LIFTS vertical mobility solutions. Each elevator is backed by over 24
             years of engineering experience and 100% component inspection.</p>
         </div>
 
+        <!-- INTERACTIVE CATEGORY FILTER BAR -->
+        <div class="product-filter-bar reveal-fade-up">
+          <div class="filter-tabs" role="tablist" aria-label="Filter elevator categories">
+            <button type="button" class="filter-tab active" data-filter="all" role="tab" aria-selected="true">
+              All Elevators <span class="tab-count">6</span>
+            </button>
+            <button type="button" class="filter-tab" data-filter="residential" role="tab" aria-selected="false">
+              Residential &amp; Villas <span class="tab-count">2</span>
+            </button>
+            <button type="button" class="filter-tab" data-filter="commercial" role="tab" aria-selected="false">
+              Commercial &amp; Freight <span class="tab-count">3</span>
+            </button>
+            <button type="button" class="filter-tab" data-filter="specialized" role="tab" aria-selected="false">
+              Hospital &amp; Specialized <span class="tab-count">2</span>
+            </button>
+          </div>
+        </div>
+
         <div class="grid-3">
 
           <!-- 1. PASSENGER ELEVATORS -->
-          <article class="card" id="passenger">
+          <article class="card reveal-card reveal-from-left" id="passenger" data-category="residential commercial">
             <div class="card-img">
               <img loading="lazy"
                 src="https://media.istockphoto.com/id/523783327/photo/administrative-workers-smiling-in-elevator.jpg?s=170667a&w=0&k=20&c=rnMBOjRauPWeAwKF8XWBetefYHIlkX_GxK6dknkR7TA="
                 alt="BP LIFTS Passenger Elevators">
+              <!-- Digital Elevator Floor & Specs HUD -->
+              <div class="card-hud-strip">
+                <span class="hud-item"><span class="hud-arrow">▲</span> <b>Floor 01-50</b></span>
+                <span class="hud-item hud-cap">4-26 Passengers</span>
+                <span class="hud-item hud-speed">Up to 2.5 m/s</span>
+              </div>
             </div>
             <div class="card-body">
-              <h3>Passenger Elevators</h3>
+              <h3><a href="product-passenger.html">Passenger Elevators</a></h3>
               <p>A passenger lift is a totally encased lift auto that moves vertically inside an exceptionally arranged
                 lift shaft. We provide all types Passenger Elevators including Manual Doors, Power Operated Doors,
                 Capsule Elevators, etc. All the Elevators are constructed considering the comfort, speed, and safety.
               </p>
-              <a class="text-link" href="contact.html?product=passenger#quote">Enquire About Passenger Elevators
-                <span>→</span></a>
+              <!-- Engineering Quick Specs Drawer -->
+              <div class="card-specs-drawer">
+                <button type="button" class="specs-toggle-btn" aria-expanded="false">
+                  <span>⚙ Technical Specifications</span>
+                  <span class="specs-chevron">▼</span>
+                </button>
+                <div class="specs-drawer-body">
+                  <div class="specs-grid">
+                    <div class="spec-cell">
+                      <span class="spec-key">Drive Type</span>
+                      <span class="spec-val">Gearless PMSM / Geared V3F</span>
+                    </div>
+                    <div class="spec-cell">
+                      <span class="spec-key">Door System</span>
+                      <span class="spec-val">Center / Side Opening Auto</span>
+                    </div>
+                    <div class="spec-cell">
+                      <span class="spec-key">Safety Gear</span>
+                      <span class="spec-val">ARD + Bi-directional Overspeed</span>
+                    </div>
+                    <div class="spec-cell">
+                      <span class="spec-key">Compliance</span>
+                      <span class="spec-val">IS 14665 &amp; Lift Act Pune</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card-actions">
+                <a class="btn-card-details" href="product-passenger.html">Full Specs &amp; Models <span>→</span></a>
+                <a class="btn-card-quote" href="contact.html?product=passenger#quote">Get a Quote ↗</a>
+              </div>
             </div>
           </article>
 
           <!-- 2. GOODS ELEVATORS -->
-          <article class="card" id="goods">
+          <article class="card reveal-card reveal-from-right" style="--reveal-delay: 0.12s;" id="goods" data-category="commercial">
             <div class="card-img">
               <img loading="lazy"
                 src="https://5.imimg.com/data5/SELLER/Default/2024/11/467856465/HE/YP/LT/126254231/commercial-goods-lift-1000x1000.jpg"
                 alt="BP LIFTS Heavy-Duty Goods Elevators">
+              <!-- Digital Elevator Floor & Specs HUD -->
+              <div class="card-hud-strip">
+                <span class="hud-item"><span class="hud-arrow">▲</span> <b>Industrial Hoist</b></span>
+                <span class="hud-item hud-cap">500 - 5000 kg</span>
+                <span class="hud-item hud-speed">0.5 - 1.0 m/s</span>
+              </div>
             </div>
             <div class="card-body">
-              <h3>Goods Elevators</h3>
+              <h3><a href="product-goods.html">Goods Elevators</a></h3>
               <p>We take pride in delivering robust and durable goods lifts that possess strong load-bearing capacities.
                 Our products are available in various finishes, specifications and budgets, ensuring that you find
                 something that perfectly suits your needs.</p>
-              <a class="text-link" href="contact.html?product=goods#quote">Enquire About Goods Elevators
-                <span>→</span></a>
+              <!-- Engineering Quick Specs Drawer -->
+              <div class="card-specs-drawer">
+                <button type="button" class="specs-toggle-btn" aria-expanded="false">
+                  <span>⚙ Technical Specifications</span>
+                  <span class="specs-chevron">▼</span>
+                </button>
+                <div class="specs-drawer-body">
+                  <div class="specs-grid">
+                    <div class="spec-cell">
+                      <span class="spec-key">Drive Mechanism</span>
+                      <span class="spec-val">Heavy Traction / Hydraulic</span>
+                    </div>
+                    <div class="spec-cell">
+                      <span class="spec-key">Cabin Flooring</span>
+                      <span class="spec-val">Chequered Steel / Aluminium</span>
+                    </div>
+                    <div class="spec-cell">
+                      <span class="spec-key">Door Style</span>
+                      <span class="spec-val">Collapsible / Imperforated / Auto</span>
+                    </div>
+                    <div class="spec-cell">
+                      <span class="spec-key">Safety Standard</span>
+                      <span class="spec-val">Overload Sensor &amp; Buffer Spring</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card-actions">
+                <a class="btn-card-details" href="product-goods.html">Full Specs &amp; Models <span>→</span></a>
+                <a class="btn-card-quote" href="contact.html?product=goods#quote">Get a Quote ↗</a>
+              </div>
             </div>
           </article>
 
           <!-- 3. HOME ELEVATORS -->
-          <article class="card" id="home">
+          <article class="card reveal-card reveal-from-left" id="home" data-category="residential">
             <div class="card-img">
               <img loading="lazy"
                 src="https://tse1.mm.bing.net/th/id/OIP.SI5IVNrHRQ_gCzKectjDCgHaJ4?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
                 alt="BP LIFTS Luxury Home Elevators">
+              <!-- Digital Elevator Floor & Specs HUD -->
+              <div class="card-hud-strip">
+                <span class="hud-item"><span class="hud-arrow">▲</span> <b>Villa Exclusive</b></span>
+                <span class="hud-item hud-cap">2 - 6 Persons</span>
+                <span class="hud-item hud-speed">Zero Pit / MRL</span>
+              </div>
             </div>
             <div class="card-body">
-              <h3>Home Elevators</h3>
+              <h3><a href="product-home.html">Home Elevators</a></h3>
               <p>The lift is a Simple yet an extremely powerful Vertical Transportation solution for your row house,
                 Bungalow, Villa, Duplex Apartment or Pent House. This Elevator does not require a Machine Room for
                 gearless type and is fitted inside the Lift Shaft and works at single phase current Supply.</p>
-              <a class="text-link" href="contact.html?product=home#quote">Enquire About Home Elevators
-                <span>→</span></a>
+              <!-- Engineering Quick Specs Drawer -->
+              <div class="card-specs-drawer">
+                <button type="button" class="specs-toggle-btn" aria-expanded="false">
+                  <span>⚙ Technical Specifications</span>
+                  <span class="specs-chevron">▼</span>
+                </button>
+                <div class="specs-drawer-body">
+                  <div class="specs-grid">
+                    <div class="spec-cell">
+                      <span class="spec-key">Power System</span>
+                      <span class="spec-val">Single Phase 230V / Inverter</span>
+                    </div>
+                    <div class="spec-cell">
+                      <span class="spec-key">Headroom Needed</span>
+                      <span class="spec-val">Ultra-low 2700 mm</span>
+                    </div>
+                    <div class="spec-cell">
+                      <span class="spec-key">Cabin Finish</span>
+                      <span class="spec-val">Designer Glass / Wooden / Hairline</span>
+                    </div>
+                    <div class="spec-cell">
+                      <span class="spec-key">Noise Level</span>
+                      <span class="spec-val">Ultra-silent &lt; 45 dB</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card-actions">
+                <a class="btn-card-details" href="product-home.html">Full Specs &amp; Models <span>→</span></a>
+                <a class="btn-card-quote" href="contact.html?product=home#quote">Get a Quote ↗</a>
+              </div>
             </div>
           </article>
 
           <!-- 4. HOSPITAL ELEVATORS -->
-          <article class="card" id="hospital">
+          <article class="card reveal-card reveal-from-right" style="--reveal-delay: 0.12s;" id="hospital" data-category="specialized">
             <div class="card-img">
               <img loading="lazy" src="https://www.carrymaxlifts.com/img/products/hospital-elevator.jpg"
                 alt="BP LIFTS Hospital & Stretcher Elevators">
+              <!-- Digital Elevator Floor & Specs HUD -->
+              <div class="card-hud-strip">
+                <span class="hud-item"><span class="hud-arrow">▲</span> <b>Medical Priority</b></span>
+                <span class="hud-item hud-cap">15 - 26 Pass / Bed</span>
+                <span class="hud-item hud-speed">Smooth V3F Jerk-Free</span>
+              </div>
             </div>
             <div class="card-body">
-              <h3>Hospital Elevators</h3>
+              <h3><a href="product-hospital.html">Hospital Elevators</a></h3>
               <p>Our hospital lifts are available in various specifications and are in high demand in various nursing
                 homes, clinics and big hospitals where patients need to be moved from one floor to another. Before our
                 lifts are dispatched, they are inspected on various quality parameters to ensure impeccable movement in
                 critical times.</p>
-              <a class="text-link" href="contact.html?product=hospital#quote">Enquire About Hospital Elevators
-                <span>→</span></a>
+              <!-- Engineering Quick Specs Drawer -->
+              <div class="card-specs-drawer">
+                <button type="button" class="specs-toggle-btn" aria-expanded="false">
+                  <span>⚙ Technical Specifications</span>
+                  <span class="specs-chevron">▼</span>
+                </button>
+                <div class="specs-drawer-body">
+                  <div class="specs-grid">
+                    <div class="spec-cell">
+                      <span class="spec-key">Stretcher Depth</span>
+                      <span class="spec-val">Deep Stretcher / Hospital Bed</span>
+                    </div>
+                    <div class="spec-cell">
+                      <span class="spec-key">Door Hold</span>
+                      <span class="spec-val">Extended Delay &amp; Light Curtain</span>
+                    </div>
+                    <div class="spec-cell">
+                      <span class="spec-key">Floor Levelling</span>
+                      <span class="spec-val">Micro-accurate +/- 2mm Zero Shock</span>
+                    </div>
+                    <div class="spec-cell">
+                      <span class="spec-key">Emergency Mode</span>
+                      <span class="spec-val">Code Blue Priority Recall</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card-actions">
+                <a class="btn-card-details" href="product-hospital.html">Full Specs &amp; Models <span>→</span></a>
+                <a class="btn-card-quote" href="contact.html?product=hospital#quote">Get a Quote ↗</a>
+              </div>
             </div>
           </article>
 
           <!-- 5. CAR ELEVATORS -->
-          <article class="card" id="car">
+          <article class="card reveal-card reveal-from-left" id="car" data-category="commercial">
             <div class="card-img">
               <img loading="lazy" src="images/car_elevator.jpg" alt="BP LIFTS Automobile & Vehicle Elevators">
+              <!-- Digital Elevator Floor & Specs HUD -->
+              <div class="card-hud-strip">
+                <span class="hud-item"><span class="hud-arrow">▲</span> <b>Automobile Lift</b></span>
+                <span class="hud-item hud-cap">3000 - 5000 kg</span>
+                <span class="hud-item hud-speed">Multi-Level Parking</span>
+              </div>
             </div>
             <div class="card-body">
-              <h3>Car Elevators</h3>
+              <h3><a href="product-car.html">Car Elevators</a></h3>
               <p>Backed by our technicians and innovation, our vehicle lifts are at par with global standards. We use
                 the best-quality materials and latest technologies to deliver quick and durable vehicle lifts for our
                 clients. These are best known for their unique design and range of technical specifications.</p>
-              <a class="text-link" href="contact.html?product=car#quote">Enquire About Car Elevators <span>→</span></a>
+              <!-- Engineering Quick Specs Drawer -->
+              <div class="card-specs-drawer">
+                <button type="button" class="specs-toggle-btn" aria-expanded="false">
+                  <span>⚙ Technical Specifications</span>
+                  <span class="specs-chevron">▼</span>
+                </button>
+                <div class="specs-drawer-body">
+                  <div class="specs-grid">
+                    <div class="spec-cell">
+                      <span class="spec-key">Platform Size</span>
+                      <span class="spec-val">Up to 6000 x 3000 mm (SUVs)</span>
+                    </div>
+                    <div class="spec-cell">
+                      <span class="spec-key">Drive Mechanism</span>
+                      <span class="spec-val">Twin Cylinder Hydraulic / Heavy Geared</span>
+                    </div>
+                    <div class="spec-cell">
+                      <span class="spec-key">Operation</span>
+                      <span class="spec-val">In-car Remote / Key Card Switch</span>
+                    </div>
+                    <div class="spec-cell">
+                      <span class="spec-key">Wheel Stopper</span>
+                      <span class="spec-val">Reinforced Automatic Bumper Beams</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card-actions">
+                <a class="btn-card-details" href="product-car.html">Full Specs &amp; Models <span>→</span></a>
+                <a class="btn-card-quote" href="contact.html?product=car#quote">Get a Quote ↗</a>
+              </div>
             </div>
           </article>
 
           <!-- 6. DUMBWAITER ELEVATORS -->
-          <article class="card" id="dumbwaiter">
+          <article class="card reveal-card reveal-from-right" style="--reveal-delay: 0.12s;" id="dumbwaiter" data-category="specialized">
             <div class="card-img">
               <img loading="lazy" src="images/dumbwaiter.jpg" alt="BP LIFTS Commercial & Residential Dumbwaiter Lifts">
+              <!-- Digital Elevator Floor & Specs HUD -->
+              <div class="card-hud-strip">
+                <span class="hud-item"><span class="hud-arrow">▲</span> <b>Service Car</b></span>
+                <span class="hud-item hud-cap">50 - 250 kg</span>
+                <span class="hud-item hud-speed">Hotels &amp; Clinics</span>
+              </div>
             </div>
             <div class="card-body">
-              <h3>Dumbwaiter Elevators</h3>
+              <h3><a href="product-dumbwaiter.html">Dumbwaiter Elevators</a></h3>
               <p>Elevators with small carriage to carry objects rather than people, Whether you need to send foodstuff
                 or laundry up and down the stairs without making an effort to climb or descent which can quickly tire
                 anybody, so with this elevator you can simply place what needs to be carried in the dumbwaiter and press
                 the button to send it or down stairs.</p>
-              <a class="text-link" href="contact.html?product=dumbwaiter#quote">Enquire About Dumbwaiter Elevators
-                <span>→</span></a>
+              <!-- Engineering Quick Specs Drawer -->
+              <div class="card-specs-drawer">
+                <button type="button" class="specs-toggle-btn" aria-expanded="false">
+                  <span>⚙ Technical Specifications</span>
+                  <span class="specs-chevron">▼</span>
+                </button>
+                <div class="specs-drawer-body">
+                  <div class="specs-grid">
+                    <div class="spec-cell">
+                      <span class="spec-key">Material</span>
+                      <span class="spec-val">SS 304 Food-Grade Stainless Steel</span>
+                    </div>
+                    <div class="spec-cell">
+                      <span class="spec-key">Door Style</span>
+                      <span class="spec-val">Bi-parting Vertical / Drop-down</span>
+                    </div>
+                    <div class="spec-cell">
+                      <span class="spec-key">Internal Shelving</span>
+                      <span class="spec-val">Removable Multi-Tier Trays</span>
+                    </div>
+                    <div class="spec-cell">
+                      <span class="spec-key">Signals</span>
+                      <span class="spec-val">Arrival Buzzer &amp; In-use Light</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card-actions">
+                <a class="btn-card-details" href="product-dumbwaiter.html">Full Specs &amp; Models <span>→</span></a>
+                <a class="btn-card-quote" href="contact.html?product=dumbwaiter#quote">Get a Quote ↗</a>
+              </div>
             </div>
           </article>
 
+        </div>
+      </div>
+    </section>
+
+    <!-- CALL TO ACTION (CTA) BAND -->
+    <section class="section" style="padding-top: 0;">
+      <div class="container">
+        <div class="cta-band reveal-card reveal-scale">
+          <div>
+            <h2>Ready to Elevate Your Building with BP LIFTS?</h2>
+            <p>Contact our senior engineering team in Karvenagar, Pune or request a complimentary on-site inspection
+              today.</p>
+          </div>
+          <a class="btn btn-primary" href="contact.html#quote">Request Free Site Visit ↗</a>
         </div>
       </div>
     </section>
@@ -222,11 +464,6 @@
         </a>
         <p>Satisfying customer need is our operating ideology. An established name for 24 years maintaining over 500
           successful elevators across Pune with 100% component inspection &amp; prompt after-sales service.</p>
-        <div class="topbar-social">
-          <a class="social-dot" href="#" aria-label="Instagram">ig</a>
-          <a class="social-dot" href="#" aria-label="Facebook">f</a>
-          <a class="social-dot" href="#" aria-label="LinkedIn">in</a>
-        </div>
       </div>
       <div class="footer-col">
         <h3>Quick Links</h3>
@@ -239,12 +476,12 @@
       </div>
       <div class="footer-col">
         <h3>Our Products</h3>
-        <a href="products.html#passenger">Passenger Elevators</a>
-        <a href="products.html#goods">Goods Elevators</a>
-        <a href="products.html#home">Home Elevators</a>
-        <a href="products.html#hospital">Hospital Elevators</a>
-        <a href="products.html#car">Car Elevators</a>
-        <a href="products.html#dumbwaiter">Dumbwaiter Elevators</a>
+        <a href="product-passenger.html">Passenger Elevators</a>
+        <a href="product-goods.html">Goods Elevators</a>
+        <a href="product-home.html">Home Elevators</a>
+        <a href="product-hospital.html">Hospital Elevators</a>
+        <a href="product-car.html">Car Elevators</a>
+        <a href="product-dumbwaiter.html">Dumbwaiter Elevators</a>
       </div>
       <div class="footer-col">
         <h3>Our Services</h3>
@@ -256,9 +493,9 @@
       <div class="footer-col">
         <h3>Contact Info</h3>
         <p>⌖ Sudarshan Apartment, S No. 6/5. Opp. Corporation Bank, Karvenagar, Pune - 411052</p>
-        <a href="tel:+918605603330">☎ +91 860 560 3330</a>
-        <a href="tel:02025469524">☎ (020) 2546 9524</a>
-        <a href="mailto:info@bplifts.co.in">✉ info@bplifts.co.in</a>
+        <a href="tel:+919730496789">☎ +91 97304 96789</a>
+        <a href="tel:+919370250537">☎ +91 93702 50537</a>
+        <a href="mailto:bpliftspune@gmail.com">✉ bpliftspune@gmail.com</a>
       </div>
     </div>
     <div class="container footer-bottom">
@@ -267,21 +504,140 @@
     </div>
   </footer>
 
-  <!-- FLOATING ACTION BUTTONS (CALL, SITE VISIT, EMAIL) -->
-  <div class="floating-action-group" aria-label="Quick contact actions">
-    <a href="tel:+918605603330" class="float-btn float-call" title="Call BP LIFTS: +91 860 560 3330">
+  <!-- FLOATING ACTION BUTTONS (CALL, EMAIL, SCROLL TO TOP - ONE BELOW THE OTHER IN ONE LINE) -->
+  <div class="floating-action-group" aria-label="Quick contact and navigation">
+    <a href="tel:+919730496789" class="float-btn float-call" title="Call BP LIFTS: +91 97304 96789" aria-label="Call BP LIFTS">
       <span class="float-icon">📞</span>
+      <span class="float-tooltip">Call: +91 97304 96789</span>
     </a>
-    <a href="mailto:info@bplifts.co.in" class="float-btn float-email" title="Send Email: info@bplifts.co.in">
+    <a href="mailto:bpliftspune@gmail.com" class="float-btn float-email" title="Send Email: bpliftspune@gmail.com" aria-label="Email BP LIFTS">
       <span class="float-icon">✉</span>
+      <span class="float-tooltip">Email: bpliftspune@gmail.com</span>
     </a>
+    <button class="back-top" aria-label="Scroll to top" title="Back to top">
+      <span class="back-top-arrow">↑</span>
+      <span class="float-tooltip">Scroll to Top</span>
+    </button>
   </div>
-
-  <button class="back-top" aria-label="Scroll to top" title="Back to top">↑</button>
   <script src="hf.js"></script>
 
   <script>
     document.querySelectorAll('.nav-links [data-page="products"]').forEach(link => link.classList.add('active'));
+
+    // 1. Staggered Scroll Reveal Observer
+    function initProductScrollReveal() {
+      const reveals = document.querySelectorAll('.reveal-card, .reveal-fade-up');
+      if ('IntersectionObserver' in window) {
+        const obs = new IntersectionObserver((entries) => {
+          entries.forEach((entry, i) => {
+            if (entry.isIntersecting) {
+              setTimeout(() => {
+                entry.target.classList.add('is-revealed');
+              }, (i % 2) * 80);
+              obs.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.12, rootMargin: '0px 0px -30px 0px' });
+        reveals.forEach(el => obs.observe(el));
+      } else {
+        reveals.forEach(el => el.classList.add('is-revealed'));
+      }
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initProductScrollReveal);
+    } else {
+      initProductScrollReveal();
+    }
+
+    // 2. Interactive Category Filter Bar
+    const filterTabs = document.querySelectorAll('.filter-tab');
+    const productCards = document.querySelectorAll('.grid-3 article.card');
+
+    filterTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        filterTabs.forEach(t => {
+          t.classList.remove('active');
+          t.setAttribute('aria-selected', 'false');
+        });
+        tab.classList.add('active');
+        tab.setAttribute('aria-selected', 'true');
+
+        const filter = tab.getAttribute('data-filter');
+
+        productCards.forEach(card => {
+          const categories = (card.getAttribute('data-category') || '').split(' ');
+          if (filter === 'all' || categories.includes(filter)) {
+            card.classList.remove('filter-hide');
+            card.classList.add('filter-show');
+          } else {
+            card.classList.add('filter-hide');
+            card.classList.remove('filter-show');
+          }
+        });
+      });
+    });
+
+    // Hash navigation helper: if an anchor is clicked (e.g. #car), ensure that card is visible
+    function syncHashFilter() {
+      const hash = window.location.hash;
+      if (hash) {
+        const targetCard = document.querySelector(hash);
+        if (targetCard && targetCard.classList.contains('filter-hide')) {
+          const allTab = document.querySelector('.filter-tab[data-filter="all"]');
+          if (allTab) allTab.click();
+        }
+      }
+    }
+    window.addEventListener('hashchange', syncHashFilter);
+    if (window.location.hash) {
+      setTimeout(syncHashFilter, 100);
+    }
+
+    // 3. Technical Specifications Accordion Drawer
+    document.querySelectorAll('.specs-toggle-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        const drawer = btn.closest('.card-specs-drawer');
+        const isOpen = drawer.classList.contains('is-open');
+
+        if (isOpen) {
+          drawer.classList.remove('is-open');
+          btn.setAttribute('aria-expanded', 'false');
+        } else {
+          drawer.classList.add('is-open');
+          btn.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+
+    // 4. 3D Perspective Mouse Tilt & Glare Spotlight Effect
+    if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+      productCards.forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+          const rect = card.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          const centerX = rect.width / 2;
+          const centerY = rect.height / 2;
+
+          // Subtle physics-based tilt (max +/- 3.5 deg for smooth stability)
+          const rotateX = ((centerY - y) / centerY) * 3.5;
+          const rotateY = ((x - centerX) / centerX) * 3.5;
+
+          card.style.transform = `perspective(1000px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) translateY(-8px)`;
+          card.style.setProperty('--mouse-x', `${x}px`);
+          card.style.setProperty('--mouse-y', `${y}px`);
+        });
+
+        card.addEventListener('mouseleave', () => {
+          card.style.transform = '';
+          card.style.removeProperty('--mouse-x');
+          card.style.removeProperty('--mouse-y');
+        });
+      });
+    }
   </script>
 </body>
 

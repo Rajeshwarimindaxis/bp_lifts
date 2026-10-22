@@ -163,7 +163,8 @@
     font-family: 'DM Sans', sans-serif;
 }
 
-.nav-wrap {
+.nav-wrap,
+.header-inner {
     min-height: 84px;
     display: flex;
     align-items: center;
@@ -427,6 +428,20 @@
     line-height: 1;
 }
 
+.menu-toggle span {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: currentColor;
+    border-radius: 2px;
+    pointer-events: none;
+}
+
+.menu-toggle:has(span) {
+    flex-direction: column;
+    gap: 4px;
+}
+
 /* =====================================================
    FOOTER
 ===================================================== */
@@ -522,26 +537,6 @@
 }
 
 /* Footer social links */
-.site-footer .topbar-social {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-top: 18px;
-}
-
-.site-footer .social-dot {
-    width: 36px;
-    height: 36px;
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    color: var(--bp-white);
-}
-
-.site-footer .social-dot:hover {
-    background: var(--bp-light-blue);
-    border-color: var(--bp-light-blue);
-    color: var(--bp-white);
-}
-
 /* Footer copyright bar */
 .footer-bottom {
     display: flex;
@@ -563,326 +558,232 @@
 }
 
 /* =====================================================
-   FLOATING ACTION BUTTONS (CALL, SITE VISIT, EMAIL)
-   Positioned above the top scroll button (.back-top)
+   FLOATING ACTION BUTTONS (CALL, EMAIL, SCROLL TO TOP)
+   Positioned in ONE unified vertical column on the right
+   "One below the other in one line"
 ===================================================== */
 
 .floating-action-group {
     position: fixed;
     right: 22px;
-    bottom: 78px;
+    bottom: 22px;
     z-index: 1400;
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
-    gap: 10px;
+    align-items: center; /* STRICTLY ALIGNED IN ONE VERTICAL LINE */
+    justify-content: flex-end;
+    gap: 12px;
     pointer-events: none;
+    width: 48px;
 }
 
-.floating-action-group .float-btn {
+/* Common circular action button styling */
+.floating-action-group .float-btn,
+.floating-action-group .back-top,
+.back-top {
     pointer-events: auto;
-    display: inline-flex;
-    align-items: center;
-    gap: 9px;
-    min-height: 42px;
-    padding: 0 16px 0 12px;
-    border-radius: 50px;
-    font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-    font-size: 13.5px;
-    font-weight: 700;
-    text-decoration: none;
-    line-height: 1;
-    white-space: nowrap;
-    box-shadow: 0 8px 24px rgba(11, 29, 111, 0.24);
-    transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
-}
-
-.floating-action-group .float-btn:hover {
-    transform: translateX(-5px);
-    box-shadow: 0 12px 30px rgba(2, 100, 173, 0.38);
-    filter: brightness(1.06);
-}
-
-.floating-action-group .float-icon {
-    display: inline-flex;
+    display: flex;
     align-items: center;
     justify-content: center;
-    width: 28px;
-    height: 28px;
+    width: 48px;
+    height: 48px;
+    min-height: 48px;
+    padding: 0;
     border-radius: 50%;
-    font-size: 14px;
-    flex-shrink: 0;
+    position: relative;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 8px 24px rgba(11, 29, 111, 0.28);
+    transition: transform 0.28s cubic-bezier(0.34, 1.56, 0.64, 1),
+                box-shadow 0.28s ease,
+                background 0.25s ease,
+                color 0.25s ease,
+                opacity 0.3s ease,
+                visibility 0.3s ease,
+                max-height 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                margin 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    outline: none;
+}
+
+.floating-action-group .float-btn:hover,
+.floating-action-group .back-top:hover,
+.back-top:hover {
+    transform: scale(1.12) translateY(-2px);
+    box-shadow: 0 14px 32px rgba(2, 100, 173, 0.45);
+}
+
+.floating-action-group .float-icon,
+.floating-action-group .back-top-arrow,
+.back-top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 19px;
+    line-height: 1;
 }
 
 /* Call Button */
 .float-btn.float-call {
     background: linear-gradient(135deg, #0264AD 0%, #0B1D6F 100%);
     color: #ffffff;
-    border: 1px solid rgba(255, 255, 255, 0.35);
+    border: 1.5px solid rgba(255, 255, 255, 0.4);
 }
 
 .float-btn.float-call .float-icon {
-    background: rgba(255, 255, 255, 0.22);
     color: #ffffff;
 }
 
-/* Site Visit Button */
-.float-btn.float-visit {
-    background: linear-gradient(135deg, #0e8ad8 0%, #0264AD 100%);
-    color: #ffffff;
-    border: 1px solid rgba(255, 255, 255, 0.4);
+/* Gentle radar pulse ring on call button */
+.float-btn.float-call::before {
+    content: "";
+    position: absolute;
+    inset: -4px;
+    border-radius: 50%;
+    border: 2px solid rgba(2, 100, 173, 0.55);
+    animation: floatCallPulse 2.4s infinite;
+    pointer-events: none;
 }
 
-.float-btn.float-visit .float-icon {
-    background: rgba(255, 255, 255, 0.25);
-    color: #ffffff;
+@keyframes floatCallPulse {
+    0% {
+        transform: scale(0.95);
+        opacity: 0.9;
+    }
+    70% {
+        transform: scale(1.35);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1.35);
+        opacity: 0;
+    }
 }
 
 /* Email Button */
 .float-btn.float-email {
     background: #ffffff;
-    color: #0B1D6F;
+    color: #0264AD;
     border: 1.5px solid #d0e2f2;
 }
 
 .float-btn.float-email .float-icon {
-    background: #eaf4fc;
     color: #0264AD;
+    transition: color 0.25s ease;
 }
 
 .float-btn.float-email:hover {
+    background: #0264AD;
+    color: #ffffff;
     border-color: #0264AD;
-    color: #0264AD;
 }
 
-.float-btn .float-text {
-    font-size: 13px;
+.float-btn.float-email:hover .float-icon {
+    color: #ffffff;
+}
+
+/* Floating Tooltip that slides out smoothly on desktop hover */
+.floating-action-group .float-tooltip {
+    position: absolute;
+    right: calc(100% + 12px);
+    top: 50%;
+    transform: translateY(-50%) translateX(8px);
+    background: #07153a;
+    color: #ffffff;
+    font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 12.5px;
     font-weight: 700;
-    letter-spacing: 0.2px;
-}
-
-/* =====================================================
-   EMAIL ACTION MODAL & TOAST NOTIFICATION
-===================================================== */
-.email-modal-overlay {
-    position: fixed;
-    inset: 0;
-    background: rgba(5, 13, 40, 0.65);
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
-    z-index: 9999;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.25s ease, visibility 0.25s ease;
-}
-
-.email-modal-overlay.is-active {
-    opacity: 1;
-    visibility: visible;
-}
-
-.email-modal-card {
-    background: #ffffff;
-    border-radius: 18px;
-    max-width: 480px;
-    width: 100%;
-    box-shadow: 0 25px 60px rgba(5, 20, 60, 0.35);
-    border: 1px solid rgba(2, 100, 173, 0.2);
-    overflow: hidden;
-    transform: translateY(20px) scale(0.96);
-    transition: transform 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
-}
-
-.email-modal-overlay.is-active .email-modal-card {
-    transform: translateY(0) scale(1);
-}
-
-.email-modal-header {
-    background: linear-gradient(135deg, #051438 0%, #0b1d6f 100%);
-    color: #ffffff;
-    padding: 20px 24px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.email-modal-header h3 {
-    margin: 0;
-    font-size: 18px;
-    color: #ffffff;
-    font-weight: 700;
-}
-
-.email-modal-header p {
-    margin: 3px 0 0;
-    font-size: 13px;
-    color: #a7cfee;
-}
-
-.email-modal-close {
-    background: rgba(255, 255, 255, 0.15);
-    border: none;
-    color: #ffffff;
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    font-size: 18px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: background 0.2s ease, transform 0.2s ease;
-}
-
-.email-modal-close:hover {
-    background: rgba(255, 255, 255, 0.3);
-    transform: rotate(90deg);
-}
-
-.email-modal-body {
-    padding: 22px 24px 26px;
-}
-
-.email-modal-desc {
-    font-size: 13.5px;
-    color: #4a5d78;
-    margin-bottom: 18px;
-    line-height: 1.5;
-}
-
-.email-options-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 11px;
-}
-
-.email-option-card {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    padding: 13px 15px;
-    border: 1.5px solid #e1e9f2;
-    border-radius: 12px;
-    text-decoration: none;
-    color: #0b1d6f;
-    background: #f8fafc;
-    transition: all 0.22s ease;
-    cursor: pointer;
-    text-align: left;
-    width: 100%;
-}
-
-.email-option-card:hover {
-    border-color: #0264AD;
-    background: #f0f7ff;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 18px rgba(2, 100, 173, 0.12);
-}
-
-.email-opt-icon {
-    width: 38px;
-    height: 38px;
-    border-radius: 10px;
-    background: #e1effa;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 19px;
-    flex-shrink: 0;
-}
-
-.email-opt-info {
-    flex-grow: 1;
-}
-
-.email-opt-info b {
-    display: block;
-    font-size: 14.5px;
-    color: #0b1d6f;
-    margin-bottom: 2px;
-}
-
-.email-opt-info span {
-    display: block;
-    font-size: 12px;
-    color: #64748b;
-}
-
-.email-opt-arrow {
-    font-size: 17px;
-    color: #0264AD;
-    font-weight: 700;
-}
-
-/* Toast Notification */
-.email-toast {
-    position: fixed;
-    bottom: 30px;
-    left: 50%;
-    transform: translateX(-50%) translateY(100px);
-    background: #051438;
-    color: #ffffff;
-    padding: 12px 24px;
-    border-radius: 50px;
-    font-size: 13.5px;
-    font-weight: 600;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
-    border: 1px solid rgba(99, 194, 255, 0.35);
-    z-index: 10000;
+    padding: 7px 14px;
+    border-radius: 8px;
+    white-space: nowrap;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.15);
     opacity: 0;
     pointer-events: none;
-    transition: all 0.35s cubic-bezier(0.165, 0.84, 0.44, 1);
-    display: flex;
-    align-items: center;
-    gap: 8px;
+    transition: opacity 0.22s ease, transform 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+    letter-spacing: 0.2px;
+    z-index: 10;
 }
 
-.email-toast.is-show {
-    transform: translateX(-50%) translateY(0);
+.floating-action-group .float-tooltip::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: -5px;
+    transform: translateY(-50%);
+    border-width: 5px 0 5px 5px;
+    border-style: solid;
+    border-color: transparent transparent transparent #07153a;
+}
+
+.floating-action-group .float-btn:hover .float-tooltip,
+.floating-action-group .back-top:hover .float-tooltip {
     opacity: 1;
+    transform: translateY(-50%) translateX(0);
 }
 
 /* =====================================================
    BACK TO TOP BUTTON
+   (Styled as matching round button stacked below contact)
 ===================================================== */
 
 .back-top {
+    background: #0B1D6F;
+    color: #ffffff;
+    border: 1.5px solid rgba(255, 255, 255, 0.25);
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.back-top .back-top-arrow {
+    display: inline-block;
+    transition: transform 0.25s ease;
+}
+
+.back-top:hover {
+    background: #0264AD;
+    color: #ffffff;
+}
+
+.back-top:hover .back-top-arrow {
+    transform: translateY(-2px);
+}
+
+/* When placed INSIDE .floating-action-group */
+.floating-action-group .back-top {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    max-height: 0;
+    margin-top: -12px;
+    transform: translateY(10px) scale(0.8);
+    overflow: hidden;
+}
+
+.floating-action-group .back-top.visible {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    max-height: 48px;
+    margin-top: 0;
+    transform: translateY(0) scale(1);
+}
+
+/* Standalone .back-top fallback if outside .floating-action-group */
+body > .back-top {
     position: fixed;
     right: 22px;
     bottom: 22px;
     z-index: 1400;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 45px;
-    height: 45px;
-    padding: 0;
-    background: var(--bp-blue);
-    color: var(--bp-white);
-    border: 0;
-    border-radius: 5px;
-    font-size: 25px;
-    cursor: pointer;
     opacity: 0;
     visibility: hidden;
     transform: translateY(10px);
-    transition: opacity 0.25s ease, visibility 0.25s ease,
-        transform 0.25s ease, background 0.25s ease;
 }
 
-.back-top.visible {
+body > .back-top.visible {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
-}
-
-.back-top:hover {
-    background: var(--bp-white);
-    color: var(--bp-black);
 }
 
 /* =====================================================
@@ -890,7 +791,8 @@
 ===================================================== */
 
 @media (max-width: 1050px) {
-    .nav-wrap {
+    .nav-wrap,
+    .header-inner {
         gap: 16px;
     }
 
@@ -932,7 +834,8 @@
         display: none;
     }
 
-    .nav-wrap {
+    .nav-wrap,
+    .header-inner {
         position: relative;
         min-height: 73px;
         gap: 12px;
@@ -1064,7 +967,8 @@
         gap: 24px;
     }
 
-    .nav-wrap {
+    .nav-wrap,
+    .header-inner {
         min-height: 68px;
     }
 
@@ -1130,27 +1034,37 @@
 
     .floating-action-group {
         right: 14px;
-        bottom: 64px;
-        gap: 8px;
+        bottom: 14px;
+        gap: 10px;
+        width: 44px;
     }
 
-    .floating-action-group .float-btn {
-        min-height: 38px;
-        padding: 0 13px 0 10px;
-        font-size: 12.5px;
-    }
-
-    .floating-action-group .float-icon {
-        width: 24px;
-        height: 24px;
-        font-size: 12px;
-    }
-
+    .floating-action-group .float-btn,
+    .floating-action-group .back-top,
     .back-top {
+        width: 44px;
+        height: 44px;
+        min-height: 44px;
+    }
+
+    .floating-action-group .float-icon,
+    .floating-action-group .back-top-arrow {
+        font-size: 17px;
+    }
+
+    .floating-action-group .back-top.visible {
+        max-height: 44px;
+    }
+
+    .floating-action-group .float-tooltip {
+        display: none;
+    }
+
+    body > .back-top {
         right: 14px;
         bottom: 14px;
-        width: 41px;
-        height: 41px;
+        width: 44px;
+        height: 44px;
     }
 }
 

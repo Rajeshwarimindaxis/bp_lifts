@@ -17,18 +17,13 @@
   <div class="topbar">
     <div class="container topbar-inner">
       <div class="topbar-track" aria-label="Contact details">
-        <span class="topbar-item">☎ <b>Call:</b> <a href="tel:+918605603330">+91 860 560 3330</a> / <a
-            href="tel:02025469524">(020) 2546 9524</a></span>
-        <span class="topbar-item">✉ <b>Email:</b> <a href="mailto:info@bplifts.co.in">info@bplifts.co.in</a></span>
+        <span class="topbar-item">☎ <b>Call:</b> <a href="tel:+919730496789">+91 97304 96789</a> / <a
+            href="tel:+919370250537">+91 93702 50537</a></span>
+        <span class="topbar-item">✉ <b>Email:</b> <a href="mailto:bpliftspune@gmail.com">bpliftspune@gmail.com</a></span>
         <span class="topbar-item">📍 <b>Location:</b> Karvenagar, Pune - 411052</span>
         <span class="topbar-item">🏢 <b>500+ Lifts across Pune &amp; Still Growing</b> · 24 Years Experience</span>
-        <span class="topbar-item">☎ <b>Call:</b> <a href="tel:+918605603330">+91 860 560 3330</a></span>
-        <span class="topbar-item">✉ <b>Email:</b> <a href="mailto:info@bplifts.co.in">info@bplifts.co.in</a></span>
-      </div>
-      <div class="topbar-social" aria-label="Social links">
-        <a class="social-dot" href="#" aria-label="Instagram">ig</a>
-        <a class="social-dot" href="#" aria-label="Facebook">f</a>
-        <a class="social-dot" href="#" aria-label="LinkedIn">in</a>
+        <span class="topbar-item">☎ <b>Call:</b> <a href="tel:+919730496789">+91 97304 96789</a></span>
+        <span class="topbar-item">✉ <b>Email:</b> <a href="mailto:bpliftspune@gmail.com">bpliftspune@gmail.com</a></span>
       </div>
     </div>
   </div>
@@ -53,12 +48,12 @@
           <div class="dropdown-menu" role="menu">
             <a href="products.html" class="dropdown-all">All Products <span>→</span></a>
             <div class="dropdown-divider"></div>
-            <a href="products.html#passenger">Passenger Elevators</a>
-            <a href="products.html#goods">Goods Elevators</a>
-            <a href="products.html#home">Home Elevators</a>
-            <a href="products.html#hospital">Hospital Elevators</a>
-            <a href="products.html#car">Car Elevators</a>
-            <a href="products.html#dumbwaiter">Dumbwaiter Elevators</a>
+            <a href="product-passenger.html">Passenger Elevators</a>
+            <a href="product-goods.html">Goods Elevators</a>
+            <a href="product-home.html">Home Elevators</a>
+            <a href="product-hospital.html">Hospital Elevators</a>
+            <a href="product-car.html">Car Elevators</a>
+            <a href="product-dumbwaiter.html">Dumbwaiter Elevators</a>
           </div>
         </div>
 
@@ -89,12 +84,14 @@
     <!-- HERO SECTION -->
     <section class="hero">
       <div class="container hero-grid">
-        <div>
-          <h1>Great Companies Are Built On <span>Great Products.</span></h1>
-          <p>Satisfying customer need is not just a statement at BP LIFTS, but it is our operating ideology. For 24
+        <div class="hero-content">
+          <h1 class="reveal-fade-up">Great Companies Are Built On <span class="hero-shimmer">Great Products.</span></h1>
+          <p class="reveal-fade-up">Satisfying customer need is not just a statement at BP LIFTS, but it is our
+            operating ideology. For 24
             years, we have delivered advanced vertical mobility solutions engineered for comfort, speed, and
             uncompromising safety across Pune.</p>
         </div>
+
       </div>
     </section>
 
@@ -102,19 +99,19 @@
     <section class="section section-soft" style="padding: 40px 0 20px;">
       <div class="container">
         <div class="stats-grid">
-          <div class="stat-card reveal-card">
+          <div class="stat-card reveal-card reveal-from-left">
             <div class="stat-number" data-target="24" data-suffix="+">24+</div>
             <div class="stat-label">Years of Industry Trust</div>
           </div>
-          <div class="stat-card reveal-card">
+          <div class="stat-card reveal-card reveal-from-left" style="--reveal-delay: 0.12s;">
             <div class="stat-number" data-target="500" data-suffix="+">500+</div>
             <div class="stat-label">Elevators Across Pune</div>
           </div>
-          <div class="stat-card reveal-card">
+          <div class="stat-card reveal-card reveal-from-right" style="--reveal-delay: 0.12s;">
             <div class="stat-number" data-target="100" data-suffix="%">100%</div>
             <div class="stat-label">Component Testing</div>
           </div>
-          <div class="stat-card reveal-card">
+          <div class="stat-card reveal-card reveal-from-right">
             <div class="stat-number">24/7</div>
             <div class="stat-label">Prompt After-Sales Care</div>
           </div>
@@ -126,8 +123,8 @@
     <section class="section about-home" id="about-overview">
       <div class="container">
         <div class="about-home-grid">
-          <!-- Left: Image with floating badge -->
-          <div class="about-home-media reveal-card">
+          <!-- Left: Image with floating badge (Coming from LEFT) -->
+          <div class="about-home-media reveal-card reveal-from-left">
             <div class="about-home-img-wrap">
               <img loading="lazy" src="images/aboutbg.png" alt="BP LIFTS Elevator Engineering Pune">
             </div>
@@ -137,8 +134,8 @@
             </div>
           </div>
 
-          <!-- Right: Content & Key Highlights -->
-          <div class="about-home-content reveal-card">
+          <!-- Right: Content & Key Highlights (Coming from RIGHT) -->
+          <div class="about-home-content reveal-card reveal-from-right">
             <div class="eyebrow">About BP LIFTS</div>
             <h2>Pune’s Trusted Elevator Engineering &amp; Maintenance Partner</h2>
             <p class="about-home-lead">"Satisfying customer need is not just a statement at BP LIFTS, but it is our
@@ -180,54 +177,103 @@
     <!-- OUR SERVICES SECTION -->
     <section class="section" id="services">
       <div class="container">
-        <div class="section-head">
+        <div class="section-head reveal-fade-up">
           <div class="eyebrow">Our Services</div>
-          <h2>Comprehensive Elevator Engineering &amp; After-Sales Care</h2>
+          <h2>Comprehensive Elevator Engineering &amp; <span class="hero-shimmer">After-Sales Care</span></h2>
+          <p>Over two decades of precision vertical engineering, preventive AMC maintenance, and 24/7 emergency response across Pune.</p>
         </div>
 
         <div class="services-grid-home">
-          <!-- 1. ELEVATOR REPAIRS -->
-          <div class="service-box reveal-card">
-            <div>
-              <div class="service-box-icon">🔧</div>
-              <h3>Elevator Repairs</h3>
-              <p>BP LIFTS provides prompt, reliable elevator repair services to minimize downtime and keep your
-                elevators running smoothly.</p>
+          <!-- 1. ELEVATOR REPAIRS (Coming from LEFT) -->
+          <article class="service-box service-summary-card reveal-card reveal-from-left">
+            <div class="service-card-media">
+              <img loading="lazy" src="images/elevator_repair.jpg" alt="BP LIFTS Elevator Repairs & Diagnostics Pune">
+              <span class="service-badge">24/7 Breakdown</span>
+              <div class="service-box-icon" aria-hidden="true">🔧</div>
             </div>
-            <a class="text-link" href="services.html#repair">Read about repair services <span>→</span></a>
-          </div>
+            <div class="service-card-body">
+              <div class="service-card-head">
+                <h3>Elevator Repairs</h3>
+                <p>Rapid fault troubleshooting, motor and V3F drive diagnostics, and quick component replacement to eliminate building downtime.</p>
+              </div>
+              <div class="service-card-tags">
+                <span class="service-tag">✓ Fast Callback Squads</span>
+                <span class="service-tag">✓ 100% Tested Spares</span>
+              </div>
+              <a class="text-link" href="services.html#repair">Read about repairs <span>→</span></a>
+            </div>
+          </article>
 
-          <!-- 2. ANNUAL MAINTENANCE -->
-          <div class="service-box reveal-card">
-            <div>
-              <div class="service-box-icon">🛡️</div>
-              <h3>Annual Maintenance (AMC)</h3>
-              <p>BP LIFTS provides reliable annual maintenance for all elevator makes, ensuring smooth performance,
-                preventive care, and prompt service support.</p>
+          <!-- 2. ANNUAL MAINTENANCE (Coming from RIGHT) -->
+          <article class="service-box service-summary-card reveal-card reveal-from-right" style="--reveal-delay: 0.12s;">
+            <div class="service-card-media">
+              <img loading="lazy" src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80" alt="BP LIFTS Annual Maintenance Contracts Pune">
+              <span class="service-badge">Routine Preventive</span>
+              <div class="service-box-icon" aria-hidden="true">🛡️</div>
             </div>
-            <a class="text-link" href="services.html#maintenance">Explore AMC packages <span>→</span></a>
-          </div>
+            <div class="service-card-body">
+              <div class="service-card-head">
+                <h3>Annual Maintenance (AMC)</h3>
+                <p>Comprehensive &amp; Non-Comprehensive AMC contracts keeping 500+ active elevators running safely and reliably across Pune.</p>
+              </div>
+              <div class="service-card-tags">
+                <span class="service-tag">✓ Monthly Lubrication &amp; Audits</span>
+                <span class="service-tag">✓ 500+ Active Lifts</span>
+              </div>
+              <a class="text-link" href="services.html#maintenance">Explore AMC packages <span>→</span></a>
+            </div>
+          </article>
 
-          <!-- 3. MODERNIZATION / UPGRADATION -->
-          <div class="service-box reveal-card">
-            <div>
-              <div class="service-box-icon">⚡</div>
-              <h3>Modernization / Upgradation</h3>
-              <p>BP LIFTS modernizes elevators with advanced control systems, upgraded interiors, and complete system
-                replacements for improved safety, performance, and style.</p>
+          <!-- 3. MODERNIZATION / UPGRADATION (Coming from LEFT) -->
+          <article class="service-box service-summary-card reveal-card reveal-from-left" style="--reveal-delay: 0.05s;">
+            <div class="service-card-media">
+              <img loading="lazy" src="https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=800&q=80" alt="Elevator Modernization & Cabin Upgrades Pune">
+              <span class="service-badge">Smart Upgrades</span>
+              <div class="service-box-icon" aria-hidden="true">⚡</div>
             </div>
-            <a class="text-link" href="services.html#modernization">View modernization options <span>→</span></a>
-          </div>
+            <div class="service-card-body">
+              <div class="service-card-head">
+                <h3>Modernization / Upgrades</h3>
+                <p>Replace outdated relay panels with modern energy-saving V3F controllers, designer SS cabins, and ambient LED fixtures.</p>
+              </div>
+              <div class="service-card-tags">
+                <span class="service-tag">✓ Energy-Saving V3F Drives</span>
+                <span class="service-tag">✓ Luxury Cabin Makeovers</span>
+              </div>
+              <a class="text-link" href="services.html#modernization">View modernization <span>→</span></a>
+            </div>
+          </article>
 
-          <!-- 4. NEW INSTALLATIONS -->
-          <div class="service-box reveal-card">
-            <div>
-              <div class="service-box-icon">🏗️</div>
-              <h3>New Installations</h3>
-              <p>BP LIFTS delivers expert elevator installations tailored to your building, ensuring quality,
-                budget-friendly solutions, and reliable project execution.</p>
+          <!-- 4. NEW INSTALLATIONS (Coming from RIGHT) -->
+          <article class="service-box service-summary-card reveal-card reveal-from-right" style="--reveal-delay: 0.16s;">
+            <div class="service-card-media">
+              <img loading="lazy" src="https://5.imimg.com/data5/SELLER/Default/2025/7/525379591/TI/PP/DL/19271002/elevator-installation-service-500x500.jpg" alt="Turnkey Elevator Installation BP LIFTS Pune">
+              <span class="service-badge">Turnkey Erection</span>
+              <div class="service-box-icon" aria-hidden="true">🏗️</div>
             </div>
-            <a class="text-link" href="services.html#installation">Plan new installation <span>→</span></a>
+            <div class="service-card-body">
+              <div class="service-card-head">
+                <h3>New Installations</h3>
+                <p>Turnkey lift design, custom shaft engineering, precision erection, and official government safety licensing for all properties.</p>
+              </div>
+              <div class="service-card-tags">
+                <span class="service-tag">✓ Custom Architectural Fit</span>
+                <span class="service-tag">✓ PWD Inspection &amp; License</span>
+              </div>
+              <a class="text-link" href="services.html#installation">Plan new installation <span>→</span></a>
+            </div>
+          </article>
+        </div>
+
+        <!-- Bottom Action Callout -->
+        <div class="services-footer-banner reveal-card reveal-scale" style="--reveal-delay: 0.1s;">
+          <div class="services-banner-text">
+            <strong>Need tailored elevator advice or an urgent repair inspection in Pune?</strong>
+            <span>Our senior engineering team is on standby 24/7 in Karvenagar.</span>
+          </div>
+          <div class="services-banner-actions">
+            <a href="services.html" class="btn btn-services-outline">All Services Details <span>→</span></a>
+            <a href="contact.html#quote" class="btn btn-primary">Request Site Visit ↗</a>
           </div>
         </div>
       </div>
@@ -246,34 +292,31 @@
 
           <!-- Carousel Controls & Interactive View Toggle -->
           <div class="products-carousel-toolbar">
-            <div class="carousel-status-pill" id="carouselStatus" title="Status of card slider">
+            <div class="carousel-status-pill" id="carouselStatus" title="Status of continuous slider">
               <span class="pulse-dot"></span>
-              <span class="status-text">Auto-Scrolling</span>
+              <span class="status-text">Continuous Sliding</span>
             </div>
             <div class="carousel-nav-controls">
-              <button type="button" class="carousel-nav-btn prev-btn" id="prodPrevBtn" aria-label="Previous products"
-                title="Previous products">‹</button>
-              <button type="button" class="carousel-nav-btn next-btn" id="prodNextBtn" aria-label="Next products"
-                title="Next products">›</button>
+              <button type="button" class="carousel-nav-btn prev-btn" id="prodPrevBtn" aria-label="Slide backward"
+                title="Slide backward">‹</button>
+              <button type="button" class="carousel-nav-btn pause-btn" id="prodPauseBtn" aria-label="Pause or Resume sliding"
+                title="Pause or Resume sliding">⏸</button>
+              <button type="button" class="carousel-nav-btn next-btn" id="prodNextBtn" aria-label="Slide forward"
+                title="Slide forward">›</button>
             </div>
             <button type="button" class="view-toggle-btn" id="viewToggleBtn"
-              aria-label="Toggle between auto-slider and grid view" title="Switch layout">
+              aria-label="Toggle between continuous slider and grid view" title="Switch layout">
               <span class="view-icon">⊞</span>
               <span class="view-label">Grid View</span>
             </button>
           </div>
         </div>
 
-        <!-- Timer progress bar for smooth auto-scroll -->
-        <div class="carousel-progress-track" id="carouselProgressTrack">
-          <div class="carousel-progress-fill" id="carouselProgress"></div>
-        </div>
-
         <!-- Slider Viewport: Keeps exactly 2 products in one row sliding smoothly -->
         <div class="products-slider-viewport" id="productsViewport">
           <div class="products-slider-track" id="productsTrack">
-            <!-- 1. Passenger -->
-            <article class="card reveal-card">
+            <!-- 1. Passenger (Coming from LEFT) -->
+            <article class="card reveal-card reveal-from-left">
               <div class="card-img">
                 <img loading="lazy"
                   src="https://media.istockphoto.com/id/523783327/photo/administrative-workers-smiling-in-elevator.jpg?s=170667a&w=0&k=20&c=rnMBOjRauPWeAwKF8XWBetefYHIlkX_GxK6dknkR7TA="
@@ -284,12 +327,12 @@
                 <p>Passenger lifts provide smooth, safe, and comfortable vertical transportation with manual or
                   automatic
                   doors, designed for reliable performance and modern buildings.</p>
-                <a class="text-link" href="products.html#passenger">Explore Passenger Elevators <span>→</span></a>
+                <a class="text-link" href="product-passenger.html">Explore Passenger Elevators <span>→</span></a>
               </div>
             </article>
 
-            <!-- 2. Goods -->
-            <article class="card reveal-card">
+            <!-- 2. Goods (Coming from RIGHT) -->
+            <article class="card reveal-card reveal-from-right">
               <div class="card-img">
                 <img loading="lazy"
                   src="https://5.imimg.com/data5/SELLER/Default/2024/11/467856465/HE/YP/LT/126254231/commercial-goods-lift-1000x1000.jpg"
@@ -299,12 +342,12 @@
                 <h3>Goods Elevators</h3>
                 <p>Durable goods lifts with high load capacity, customizable finishes, and budget-friendly options for
                   industrial and commercial needs.</p>
-                <a class="text-link" href="products.html#goods">Explore Goods Elevators <span>→</span></a>
+                <a class="text-link" href="product-goods.html">Explore Goods Elevators <span>→</span></a>
               </div>
             </article>
 
-            <!-- 3. Home -->
-            <article class="card reveal-card">
+            <!-- 3. Home (Coming from LEFT) -->
+            <article class="card reveal-card reveal-from-left">
               <div class="card-img">
                 <img loading="lazy"
                   src="https://tse1.mm.bing.net/th/id/OIP.SI5IVNrHRQ_gCzKectjDCgHaJ4?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
@@ -314,12 +357,12 @@
                 <h3>Home Elevators</h3>
                 <p>Compact, energy-efficient home lifts for villas, bungalows, and duplexes, featuring gearless
                   technology, no machine room requirement, and single-phase power compatibility.</p>
-                <a class="text-link" href="products.html#home">Explore Home Elevators <span>→</span></a>
+                <a class="text-link" href="product-home.html">Explore Home Elevators <span>→</span></a>
               </div>
             </article>
 
-            <!-- 4. Hospital -->
-            <article class="card reveal-card">
+            <!-- 4. Hospital (Coming from RIGHT) -->
+            <article class="card reveal-card reveal-from-right">
               <div class="card-img">
                 <img loading="lazy" src="https://www.carrymaxlifts.com/img/products/hospital-elevator.jpg"
                   alt="Hospital Elevators">
@@ -328,12 +371,12 @@
                 <h3>Hospital Elevators</h3>
                 <p>Reliable hospital lifts designed for smooth, safe patient transportation, ensuring dependable
                   performance in hospitals, clinics, and nursing homes.</p>
-                <a class="text-link" href="products.html#hospital">Explore Hospital Elevators <span>→</span></a>
+                <a class="text-link" href="product-hospital.html">Explore Hospital Elevators <span>→</span></a>
               </div>
             </article>
 
-            <!-- 5. Car -->
-            <article class="card reveal-card">
+            <!-- 5. Car (Coming from LEFT) -->
+            <article class="card reveal-card reveal-from-left">
               <div class="card-img">
                 <img loading="lazy" src="images/car_elevator.jpg" alt="Car Elevators">
               </div>
@@ -342,12 +385,12 @@
                 <p>Durable, high-performance vehicle lifts built with premium materials and advanced technology,
                   offering
                   innovative designs for diverse automotive needs.</p>
-                <a class="text-link" href="products.html#car">Explore Car Elevators <span>→</span></a>
+                <a class="text-link" href="product-car.html">Explore Car Elevators <span>→</span></a>
               </div>
             </article>
 
-            <!-- 6. Dumbwaiter -->
-            <article class="card reveal-card">
+            <!-- 6. Dumbwaiter (Coming from RIGHT) -->
+            <article class="card reveal-card reveal-from-right">
               <div class="card-img">
                 <img loading="lazy" src="images/dumbwaiter.jpg" alt="Dumbwaiter Elevators">
               </div>
@@ -355,59 +398,52 @@
                 <h3>Dumbwaiter Elevators</h3>
                 <p>Compact dumbwaiter lifts for effortlessly transporting food, laundry, and other goods between floors
                   with convenient push-button operation.</p>
-                <a class="text-link" href="products.html#dumbwaiter">Explore Dumbwaiter Elevators <span>→</span></a>
+                <a class="text-link" href="product-dumbwaiter.html">Explore Dumbwaiter Elevators <span>→</span></a>
               </div>
             </article>
           </div>
         </div>
 
-        <!-- Slider Pagination Dots -->
-        <div class="products-slider-dots" id="productsDots" aria-label="Slide indicators">
-          <button type="button" class="slider-dot active" data-slide="0"
-            aria-label="Slide 1: Passenger &amp; Goods"></button>
-          <button type="button" class="slider-dot" data-slide="1" aria-label="Slide 2: Home &amp; Hospital"></button>
-          <button type="button" class="slider-dot" data-slide="2" aria-label="Slide 3: Car &amp; Dumbwaiter"></button>
-        </div>
       </div>
     </section>
 
     <!-- OPERATING IDEOLOGY & WHY BP LIFTS -->
     <section class="section">
       <div class="container split">
-        <div class="split-image">
+        <div class="split-image reveal-card reveal-from-left">
           <img loading="lazy"
             src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80"
             alt="BP LIFTS Engineering Center Pune">
         </div>
-        <div class="split-copy">
+        <div class="split-copy reveal-card reveal-from-right">
           <div class="eyebrow">Our Operating Ideology</div>
           <h2>Satisfying Customer Need Is Our Core Philosophy.</h2>
           <p>Operating for 24 years, BP LIFTS has built lasting trust across Pune. We don't just sell elevators; we
             build long-term mobility partnerships backed by meticulous engineering and responsive customer support.</p>
 
           <div class="feature-list">
-            <div class="feature">
+            <div class="feature reveal-card reveal-from-left">
               <span class="feature-icon">✓</span>
               <div>
                 <h3>24 Years of Industry Trust</h3>
                 <p>Over two decades of proven elevator installations and maintenance in Pune.</p>
               </div>
             </div>
-            <div class="feature">
+            <div class="feature reveal-card reveal-from-right">
               <span class="feature-icon">🏢</span>
               <div>
                 <h3>500+ Active Elevators</h3>
                 <p>Maintaining more than 500 successful elevators across Pune societies and businesses.</p>
               </div>
             </div>
-            <div class="feature">
+            <div class="feature reveal-card reveal-from-left" style="--reveal-delay: 0.12s;">
               <span class="feature-icon">🔍</span>
               <div>
                 <h3>100% Inspection &amp; Testing</h3>
                 <p>Complete multi-point inspection of all mechanical and safety components.</p>
               </div>
             </div>
-            <div class="feature">
+            <div class="feature reveal-card reveal-from-right" style="--reveal-delay: 0.12s;">
               <span class="feature-icon">⚡</span>
               <div>
                 <h3>Prompt After Sales Service</h3>
@@ -422,7 +458,7 @@
     <!-- CALL TO ACTION (CTA) BAND -->
     <section class="section" style="padding-top: 0;">
       <div class="container">
-        <div class="cta-band reveal-card">
+        <div class="cta-band reveal-card reveal-scale">
           <div>
             <h2>Ready to Elevate Your Building with BP LIFTS?</h2>
             <p>Contact our senior engineering team in Karvenagar, Pune or request a complimentary on-site inspection
@@ -443,11 +479,6 @@
         </a>
         <p>Satisfying customer need is our operating ideology. An established name for 24 years maintaining over 500
           successful elevators across Pune with 100% component inspection &amp; prompt after-sales service.</p>
-        <div class="topbar-social">
-          <a class="social-dot" href="#" aria-label="Instagram">ig</a>
-          <a class="social-dot" href="#" aria-label="Facebook">f</a>
-          <a class="social-dot" href="#" aria-label="LinkedIn">in</a>
-        </div>
       </div>
       <div class="footer-col">
         <h3>Quick Links</h3>
@@ -460,12 +491,12 @@
       </div>
       <div class="footer-col">
         <h3>Our Products</h3>
-        <a href="products.html#passenger">Passenger Elevators</a>
-        <a href="products.html#goods">Goods Elevators</a>
-        <a href="products.html#home">Home Elevators</a>
-        <a href="products.html#hospital">Hospital Elevators</a>
-        <a href="products.html#car">Car Elevators</a>
-        <a href="products.html#dumbwaiter">Dumbwaiter Elevators</a>
+        <a href="product-passenger.html">Passenger Elevators</a>
+        <a href="product-goods.html">Goods Elevators</a>
+        <a href="product-home.html">Home Elevators</a>
+        <a href="product-hospital.html">Hospital Elevators</a>
+        <a href="product-car.html">Car Elevators</a>
+        <a href="product-dumbwaiter.html">Dumbwaiter Elevators</a>
       </div>
       <div class="footer-col">
         <h3>Our Services</h3>
@@ -477,9 +508,9 @@
       <div class="footer-col">
         <h3>Contact Info</h3>
         <p>⌖ Sudarshan Apartment, S No. 6/5. Opp. Corporation Bank, Karvenagar, Pune - 411052</p>
-        <a href="tel:+918605603330">☎ +91 860 560 3330</a>
-        <a href="tel:02025469524">☎ (020) 2546 9524</a>
-        <a href="mailto:info@bplifts.co.in">✉ info@bplifts.co.in</a>
+        <a href="tel:+919730496789">☎ +91 97304 96789</a>
+        <a href="tel:+919370250537">☎ +91 93702 50537</a>
+        <a href="mailto:bpliftspune@gmail.com">✉ bpliftspune@gmail.com</a>
       </div>
     </div>
     <div class="container footer-bottom">
@@ -488,17 +519,23 @@
     </div>
   </footer>
 
-  <!-- FLOATING ACTION BUTTONS (CALL, SITE VISIT, EMAIL) -->
-  <div class="floating-action-group" aria-label="Quick contact actions">
-    <a href="tel:+918605603330" class="float-btn float-call" title="Call BP LIFTS: +91 860 560 3330">
+  <!-- FLOATING ACTION BUTTONS (CALL, EMAIL, SCROLL TO TOP - ONE BELOW THE OTHER IN ONE LINE) -->
+  <div class="floating-action-group" aria-label="Quick contact and navigation">
+    <a href="tel:+919730496789" class="float-btn float-call" title="Call BP LIFTS: +91 97304 96789"
+      aria-label="Call BP LIFTS">
       <span class="float-icon">📞</span>
+      <span class="float-tooltip">Call: +91 97304 96789</span>
     </a>
-    <a href="mailto:info@bplifts.co.in" class="float-btn float-email" title="Send Email: info@bplifts.co.in">
+    <a href="mailto:bpliftspune@gmail.com" class="float-btn float-email" title="Send Email: bpliftspune@gmail.com"
+      aria-label="Email BP LIFTS">
       <span class="float-icon">✉</span>
+      <span class="float-tooltip">Email: bpliftspune@gmail.com</span>
     </a>
+    <button class="back-top" aria-label="Scroll to top" title="Back to top">
+      <span class="back-top-arrow">↑</span>
+      <span class="float-tooltip">Scroll to Top</span>
+    </button>
   </div>
-
-  <button class="back-top" aria-label="Scroll to top" title="Back to top">↑</button>
   <script src="hf.js"></script>
 
   <script>
@@ -551,21 +588,24 @@
     }
 
     // ========================================================
-    // 2. STAGGERED SCROLL REVEAL ANIMATIONS
+    // 2. STAGGERED SCROLL REVEAL ANIMATIONS (Cards from both sides)
     // ========================================================
     function initScrollReveal() {
-      const reveals = document.querySelectorAll('.reveal-card');
+      const reveals = document.querySelectorAll('.reveal-card, .reveal-fade-up');
       if ('IntersectionObserver' in window) {
         const obs = new IntersectionObserver((entries) => {
-          entries.forEach((entry, i) => {
+          entries.forEach((entry) => {
             if (entry.isIntersecting) {
-              setTimeout(() => {
-                entry.target.classList.add('is-revealed');
-              }, (i % 4) * 90);
-              obs.unobserve(entry.target);
+              const el = entry.target;
+              // Immediate or CSS-delay backed reveal
+              el.classList.add('is-revealed');
+              obs.unobserve(el);
             }
           });
-        }, { threshold: 0.12 });
+        }, {
+          threshold: 0.08,
+          rootMargin: '0px 0px -40px 0px'
+        });
         reveals.forEach(el => obs.observe(el));
       } else {
         reveals.forEach(el => el.classList.add('is-revealed'));
@@ -602,150 +642,190 @@
     }
 
     // ========================================================
-    // 4. PRODUCTS AUTO-SCROLLING 2-IN-ROW CAROUSEL & VIEW TOGGLE
+    // 4. PRODUCTS CONTINUOUS SLOW SLIDER & VIEW TOGGLE
     // ========================================================
     function initProductsCarousel() {
       const viewport = document.getElementById('productsViewport');
       const track = document.getElementById('productsTrack');
-      const dots = document.querySelectorAll('.slider-dot');
       const prevBtn = document.getElementById('prodPrevBtn');
       const nextBtn = document.getElementById('prodNextBtn');
+      const pauseBtn = document.getElementById('prodPauseBtn');
       const statusPill = document.getElementById('carouselStatus');
       const statusText = statusPill ? statusPill.querySelector('.status-text') : null;
-      const progressFill = document.getElementById('carouselProgress');
       const viewToggleBtn = document.getElementById('viewToggleBtn');
 
       if (!viewport || !track) return;
 
-      const totalSlides = 3; // 6 products / 2 per slide = 3 slides
-      let currentSlide = 0;
+      // Clone original cards to enable seamless infinite continuous looping
+      const originalCards = Array.from(track.children);
+      const originalCount = originalCards.length;
+      if (originalCount === 0) return;
+
+      originalCards.forEach(card => {
+        const clone = card.cloneNode(true);
+        clone.setAttribute('aria-hidden', 'true');
+        clone.classList.add('is-revealed');
+        track.appendChild(clone);
+      });
+
+      // Ensure all cards are visible in continuous glide
+      track.querySelectorAll('.card').forEach(c => c.classList.add('is-revealed'));
+
+      let scrollX = 0;
       let isPaused = false;
       let isGridMode = false;
-      const slideDuration = 4000;
-      let elapsed = 0;
-      const tick = 40;
+      let userManuallyPaused = false;
+      const speed = 0.65; // Slow, continuous, smooth gliding (~40px/sec at 60fps)
 
-      function updateSlide(animate = true) {
-        if (isGridMode) return;
+      function getLoopDistance() {
         const cards = track.querySelectorAll('.card');
-        if (!cards.length) return;
-
-        const targetCard = cards[currentSlide * 2] || cards[0];
-        const offset = targetCard.offsetLeft - cards[0].offsetLeft;
-
-        track.style.transition = animate ? 'transform 0.65s cubic-bezier(0.25, 1, 0.5, 1)' : 'none';
-        track.style.transform = `translateX(-${offset}px)`;
-
-        dots.forEach((dot, idx) => {
-          dot.classList.toggle('active', idx === currentSlide);
-        });
-      }
-
-      function nextSlide() {
-        currentSlide = (currentSlide + 1) % totalSlides;
-        elapsed = 0;
-        if (progressFill) progressFill.style.width = '0%';
-        updateSlide(true);
-      }
-
-      function prevSlide() {
-        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-        elapsed = 0;
-        if (progressFill) progressFill.style.width = '0%';
-        updateSlide(true);
-      }
-
-      function goTo(index) {
-        currentSlide = index;
-        elapsed = 0;
-        if (progressFill) progressFill.style.width = '0%';
-        updateSlide(true);
-      }
-
-      // 4-second auto-scroll timer ticker
-      setInterval(() => {
-        if (isPaused || isGridMode) return;
-        elapsed += tick;
-        const pct = Math.min((elapsed / slideDuration) * 100, 100);
-        if (progressFill) progressFill.style.width = pct + '%';
-        if (elapsed >= slideDuration) {
-          nextSlide();
+        if (cards.length > originalCount && cards[originalCount]) {
+          return cards[originalCount].offsetLeft - cards[0].offsetLeft;
         }
-      }, tick);
+        return track.scrollWidth / 2;
+      }
 
-      // Pause on hover
+      function updateStatus(paused, text) {
+        if (statusPill) statusPill.classList.toggle('is-paused', paused);
+        if (statusText) statusText.textContent = text;
+        if (pauseBtn) {
+          pauseBtn.textContent = paused ? '▶' : '⏸';
+          pauseBtn.setAttribute('title', paused ? 'Resume continuous sliding' : 'Pause sliding');
+        }
+      }
+
+      function step() {
+        if (!isPaused && !isGridMode) {
+          const loopDist = getLoopDistance();
+          if (loopDist > 0) {
+            scrollX += speed;
+            if (scrollX >= loopDist) {
+              scrollX -= loopDist; // Seamless continuous wrap with 0 visual glitch
+            }
+            track.style.transform = `translate3d(-${scrollX}px, 0, 0)`;
+          }
+        }
+        requestAnimationFrame(step);
+      }
+
+      requestAnimationFrame(step);
+
+      // Pause on hover so user can easily read card or click links
       viewport.addEventListener('mouseenter', () => {
-        if (isGridMode) return;
+        if (isGridMode || userManuallyPaused) return;
         isPaused = true;
-        if (statusPill) statusPill.classList.add('is-paused');
-        if (statusText) statusText.textContent = 'Paused (Hover)';
+        updateStatus(true, 'Paused (Hover)');
       });
 
       viewport.addEventListener('mouseleave', () => {
-        if (isGridMode) return;
+        if (isGridMode || userManuallyPaused) return;
         isPaused = false;
-        if (statusPill) statusPill.classList.remove('is-paused');
-        if (statusText) statusText.textContent = 'Auto-Scrolling';
+        updateStatus(false, 'Continuous Sliding');
       });
 
-      // Controls
-      if (nextBtn) nextBtn.addEventListener('click', nextSlide);
-      if (prevBtn) prevBtn.addEventListener('click', prevSlide);
-
-      dots.forEach(dot => {
-        dot.addEventListener('click', () => {
-          const s = parseInt(dot.getAttribute('data-slide'), 10);
-          if (!isNaN(s)) goTo(s);
+      // Pause / Play toggle button
+      if (pauseBtn) {
+        pauseBtn.addEventListener('click', () => {
+          if (isGridMode) return;
+          userManuallyPaused = !userManuallyPaused;
+          isPaused = userManuallyPaused;
+          updateStatus(isPaused, isPaused ? 'Paused' : 'Continuous Sliding');
         });
-      });
+      }
 
-      // Layout Toggle (Auto-Slider vs Grid View)
+      // Next / Prev manual nudging
+      if (nextBtn) {
+        nextBtn.addEventListener('click', () => {
+          if (isGridMode) return;
+          const firstCard = track.querySelector('.card');
+          const stepSize = firstCard ? (firstCard.offsetWidth + 32) : 340;
+          const loopDist = getLoopDistance();
+          scrollX += stepSize;
+          if (loopDist > 0 && scrollX >= loopDist) scrollX -= loopDist;
+          track.style.transform = `translate3d(-${scrollX}px, 0, 0)`;
+        });
+      }
+
+      if (prevBtn) {
+        prevBtn.addEventListener('click', () => {
+          if (isGridMode) return;
+          const firstCard = track.querySelector('.card');
+          const stepSize = firstCard ? (firstCard.offsetWidth + 32) : 340;
+          const loopDist = getLoopDistance();
+          scrollX -= stepSize;
+          if (loopDist > 0 && scrollX < 0) scrollX += loopDist;
+          track.style.transform = `translate3d(-${scrollX}px, 0, 0)`;
+        });
+      }
+
+      // Layout Toggle (Continuous Slider vs Grid View)
       if (viewToggleBtn) {
         viewToggleBtn.addEventListener('click', () => {
           isGridMode = !isGridMode;
           if (isGridMode) {
             viewport.classList.add('is-grid');
             viewToggleBtn.querySelector('.view-icon').textContent = '⇄';
-            viewToggleBtn.querySelector('.view-label').textContent = 'Auto-Slider';
-            if (statusPill) statusPill.classList.add('is-paused');
-            if (statusText) statusText.textContent = 'Grid View (All)';
-            if (progressFill) progressFill.style.width = '0%';
+            viewToggleBtn.querySelector('.view-label').textContent = 'Continuous View';
+            updateStatus(true, 'Grid View (All)');
             track.style.transform = 'none';
           } else {
             viewport.classList.remove('is-grid');
             viewToggleBtn.querySelector('.view-icon').textContent = '⊞';
             viewToggleBtn.querySelector('.view-label').textContent = 'Grid View';
-            if (statusPill) statusPill.classList.remove('is-paused');
-            if (statusText) statusText.textContent = 'Auto-Scrolling';
-            elapsed = 0;
-            updateSlide(false);
+            isPaused = userManuallyPaused;
+            updateStatus(isPaused, isPaused ? 'Paused' : 'Continuous Sliding');
+            track.style.transform = `translate3d(-${scrollX}px, 0, 0)`;
           }
         });
       }
 
-      // Touch swipe support for mobile
+      // Touch drag / swipe support for mobile
       let touchStartX = 0;
+      let touchScrollStart = 0;
+      let isTouching = false;
+
       viewport.addEventListener('touchstart', e => {
-        touchStartX = e.changedTouches[0].screenX;
+        if (isGridMode) return;
+        isTouching = true;
+        isPaused = true;
+        touchStartX = e.touches[0].clientX;
+        touchScrollStart = scrollX;
       }, { passive: true });
 
-      viewport.addEventListener('touchend', e => {
-        const touchEndX = e.changedTouches[0].screenX;
-        if (touchEndX - touchStartX < -45) {
-          nextSlide();
-        } else if (touchEndX - touchStartX > 45) {
-          prevSlide();
+      viewport.addEventListener('touchmove', e => {
+        if (!isTouching || isGridMode) return;
+        const deltaX = touchStartX - e.touches[0].clientX;
+        const loopDist = getLoopDistance();
+        scrollX = touchScrollStart + deltaX;
+        if (loopDist > 0) {
+          while (scrollX >= loopDist) scrollX -= loopDist;
+          while (scrollX < 0) scrollX += loopDist;
         }
+        track.style.transform = `translate3d(-${scrollX}px, 0, 0)`;
+      }, { passive: true });
+
+      viewport.addEventListener('touchend', () => {
+        if (!isTouching) return;
+        isTouching = false;
+        setTimeout(() => {
+          if (!userManuallyPaused && !isGridMode) {
+            isPaused = false;
+            updateStatus(false, 'Continuous Sliding');
+          }
+        }, 500);
       }, { passive: true });
 
       window.addEventListener('resize', () => {
-        if (!isGridMode) {
-          updateSlide(false);
+        if (isGridMode) {
+          track.style.transform = 'none';
+        } else {
+          const loopDist = getLoopDistance();
+          if (loopDist > 0 && scrollX >= loopDist) {
+            scrollX %= loopDist;
+          }
+          track.style.transform = `translate3d(-${scrollX}px, 0, 0)`;
         }
       });
-
-      // Initial alignment
-      setTimeout(() => updateSlide(false), 80);
     }
 
     // Initialize all enhancements
