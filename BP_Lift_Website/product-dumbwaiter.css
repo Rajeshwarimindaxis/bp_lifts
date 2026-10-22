@@ -149,9 +149,17 @@ main * {
 }
 
 @keyframes dwPulse {
-    0% { box-shadow: 0 0 0 0 rgba(217, 119, 6, 0.7); }
-    70% { box-shadow: 0 0 0 8px rgba(217, 119, 6, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(217, 119, 6, 0); }
+    0% {
+        box-shadow: 0 0 0 0 rgba(217, 119, 6, 0.7);
+    }
+
+    70% {
+        box-shadow: 0 0 0 8px rgba(217, 119, 6, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(217, 119, 6, 0);
+    }
 }
 
 .product-hero h1 {
@@ -173,8 +181,15 @@ main * {
 }
 
 @keyframes dwShimmer {
-    0%, 100% { background-position: 0% center; }
-    50% { background-position: 200% center; }
+
+    0%,
+    100% {
+        background-position: 0% center;
+    }
+
+    50% {
+        background-position: 200% center;
+    }
 }
 
 .product-hero-desc {
@@ -327,7 +342,7 @@ main * {
    SECTIONS GENERAL
 ===================================================== */
 .section {
-    padding: 85px 0;
+    padding: 45px 0;
     position: relative;
 }
 
@@ -543,6 +558,7 @@ main * {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 36px;
+    align-items: stretch;
 }
 
 .planning-card {
@@ -556,10 +572,17 @@ main * {
 }
 
 .planning-card h3 {
-    font-size: 20px;
+    font-size: 21px;
     color: var(--bp-dark-blue);
     margin: 0 0 16px 0;
     font-weight: 800;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.planning-card h3 span.icon {
+    font-size: 24px;
 }
 
 .planning-card p {
@@ -569,31 +592,51 @@ main * {
     margin-bottom: 20px;
 }
 
+.guidelines-list,
 .planning-list {
     list-style: none;
     padding: 0;
     margin: 0;
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 14px;
 }
 
+.guidelines-list li,
 .planning-list li {
     display: flex;
     align-items: flex-start;
-    gap: 10px;
+    gap: 12px;
     font-size: 14.5px;
+    line-height: 1.6;
     color: var(--bp-text);
 }
 
+.guidelines-list li b,
+.guidelines-list li strong,
+.planning-list li b,
 .planning-list li strong {
     color: var(--bp-dark-blue);
 }
 
+.guidelines-list li span.check,
 .bullet-check {
-    color: #d97706;
-    font-weight: 800;
+    color: #b45309;
+    font-weight: 900;
     font-size: 16px;
+    line-height: 1.4;
+    flex-shrink: 0;
+}
+
+.planning-callout {
+    margin-top: auto;
+    padding: 16px 20px;
+    background: #fef3c7;
+    border-left: 4px solid #b45309;
+    border-radius: 6px;
+    font-size: 13.5px;
+    color: #78350f;
+    line-height: 1.6;
 }
 
 /* =====================================================
@@ -850,7 +893,7 @@ main * {
 }
 
 .related-img img,
-.related-card > img {
+.related-card>img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -859,7 +902,7 @@ main * {
 }
 
 .related-card:hover .related-img img,
-.related-card:hover > img {
+.related-card:hover>img {
     transform: scale(1.08);
 }
 
@@ -913,6 +956,7 @@ main * {
    RESPONSIVE MEDIA QUERIES (Dumbwaiter)
 ===================================================== */
 @media (max-width: 1080px) {
+
     .features-grid-4,
     .feat-grid-4,
     .finishes-grid-4 {
@@ -932,7 +976,8 @@ main * {
     }
 
     .planning-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
     }
 
     .cta-band-box,
@@ -955,11 +1000,13 @@ main * {
 }
 
 @media (max-width: 640px) {
+
     .features-grid-4,
     .feat-grid-4,
     .finishes-grid-4,
     .safety-grid-3,
-    .related-grid-3 {
+    .related-grid-3,
+    .planning-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 10px;
     }
@@ -1076,7 +1123,7 @@ main * {
     }
 
     .related-img img,
-    .related-card > img {
+    .related-card>img {
         width: 100%;
         height: 100%;
         object-fit: cover;
@@ -1136,6 +1183,61 @@ main * {
         transition: transform 0.2s ease;
     }
 
+    .planning-card {
+        padding: 14px 10px;
+        border-radius: 12px;
+        min-width: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .planning-card h3 {
+        font-size: 13px;
+        line-height: 1.35;
+        margin: 0 0 10px 0;
+        font-weight: 800;
+        display: flex;
+        align-items: flex-start;
+        gap: 6px;
+        word-break: break-word;
+    }
+
+    .planning-card h3 span.icon {
+        font-size: 15px;
+        line-height: 1.2;
+        flex-shrink: 0;
+    }
+
+    .guidelines-list,
+    .planning-list {
+        gap: 10px;
+    }
+
+    .guidelines-list li,
+    .planning-list li {
+        font-size: 11px;
+        line-height: 1.45;
+        gap: 6px;
+        word-break: break-word;
+    }
+
+    .guidelines-list li span.check,
+    .bullet-check {
+        font-size: 12px;
+        line-height: 1.3;
+        flex-shrink: 0;
+    }
+
+    .planning-callout {
+        margin-top: 12px;
+        padding: 10px 8px;
+        font-size: 10.5px;
+        line-height: 1.4;
+        border-left-width: 3px;
+        border-radius: 6px;
+        word-break: break-word;
+    }
+
     .specs-table th,
     .specs-table td {
         padding: 10px 8px;
@@ -1162,5 +1264,25 @@ main * {
 
     .related-link {
         font-size: 10.5px;
+    }
+
+    .planning-card {
+        padding: 12px 8px;
+    }
+
+    .planning-card h3 {
+        font-size: 12px;
+    }
+
+    .guidelines-list li,
+    .planning-list li {
+        font-size: 10px;
+        line-height: 1.4;
+        gap: 5px;
+    }
+
+    .planning-callout {
+        padding: 8px 6px;
+        font-size: 9.5px;
     }
 }

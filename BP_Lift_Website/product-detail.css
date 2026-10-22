@@ -82,7 +82,7 @@ main * {
     position: absolute;
     inset: 0;
     background-image: linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
-                      linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+        linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
     background-size: 40px 40px;
     pointer-events: none;
 }
@@ -147,9 +147,17 @@ main * {
 }
 
 @keyframes livePulse {
-    0% { box-shadow: 0 0 0 0 rgba(0, 229, 255, 0.7); }
-    70% { box-shadow: 0 0 0 8px rgba(0, 229, 255, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(0, 229, 255, 0); }
+    0% {
+        box-shadow: 0 0 0 0 rgba(0, 229, 255, 0.7);
+    }
+
+    70% {
+        box-shadow: 0 0 0 8px rgba(0, 229, 255, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(0, 229, 255, 0);
+    }
 }
 
 .product-hero h1 {
@@ -171,8 +179,15 @@ main * {
 }
 
 @keyframes shimmerEffect {
-    0%, 100% { background-position: 0% center; }
-    50% { background-position: 200% center; }
+
+    0%,
+    100% {
+        background-position: 0% center;
+    }
+
+    50% {
+        background-position: 200% center;
+    }
 }
 
 .product-hero-desc {
@@ -317,7 +332,7 @@ main * {
    SECTIONS GENERAL
 ===================================================== */
 .section {
-    padding: 85px 0;
+    padding: 45px 0;
     position: relative;
 }
 
@@ -845,7 +860,7 @@ main * {
 }
 
 .related-img img,
-.related-card > img {
+.related-card>img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -854,7 +869,7 @@ main * {
 }
 
 .related-card:hover .related-img img,
-.related-card:hover > img {
+.related-card:hover>img {
     transform: scale(1.08);
 }
 
@@ -909,6 +924,7 @@ main * {
    RESPONSIVE MEDIA QUERIES
 ===================================================== */
 @media (max-width: 1080px) {
+
     .features-grid-4,
     .finishes-grid-4 {
         grid-template-columns: repeat(2, 1fr);
@@ -948,6 +964,7 @@ main * {
 }
 
 @media (max-width: 640px) {
+
     .features-grid-4,
     .feat-grid-4,
     .finishes-grid-4,
@@ -1069,7 +1086,7 @@ main * {
     }
 
     .related-img img,
-    .related-card > img {
+    .related-card>img {
         width: 100%;
         height: 100%;
         object-fit: cover;

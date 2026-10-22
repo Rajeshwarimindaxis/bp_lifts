@@ -63,7 +63,10 @@ main * {
     margin-inline: auto;
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
     color: var(--bp-dark-blue);
     font-weight: 800;
     line-height: 1.25;
@@ -106,7 +109,7 @@ img {
     position: absolute;
     inset: 0;
     background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-                      linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
     background-size: 38px 38px;
     pointer-events: none;
 }
@@ -312,7 +315,7 @@ img {
 ===================================================== */
 .cta-band {
     background: radial-gradient(circle at 90% 50%, rgba(2, 100, 173, 0.35) 0%, transparent 60%),
-                linear-gradient(135deg, #060e2b 0%, #0b1d6f 100%);
+        linear-gradient(135deg, #060e2b 0%, #0b1d6f 100%);
     border: 1px solid rgba(2, 100, 173, 0.4);
     border-radius: var(--bp-radius-lg);
     padding: 48px 45px;
@@ -361,7 +364,7 @@ img {
 
 .ideology-banner {
     background: radial-gradient(circle at 90% 20%, rgba(2, 100, 173, 0.35) 0%, transparent 60%),
-                linear-gradient(135deg, #050e2e 0%, #0b1d6f 100%);
+        linear-gradient(135deg, #050e2e 0%, #0b1d6f 100%);
     border: 1px solid rgba(2, 100, 173, 0.4);
     border-radius: var(--bp-radius-lg);
     padding: 45px 40px;
