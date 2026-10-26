@@ -1068,6 +1068,67 @@ body > .back-top.visible {
     }
 }
 
+/* =====================================================
+   GLOBAL STANDARDIZED HERO HEIGHT SYSTEM (ALL PAGES)
+===================================================== */
+.hero,
+.page-hero,
+.product-hero {
+    position: relative;
+    min-height: 420px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 45px 0;
+    overflow: hidden;
+}
+
+.hero > .container,
+.page-hero > .container,
+.product-hero > .container {
+    width: min(var(--bp-container, 1180px), 92%);
+    margin-inline: auto;
+    position: relative;
+    z-index: 2;
+}
+
+@media (max-width: 900px) {
+    .hero,
+    .page-hero,
+    .product-hero {
+        min-height: 360px;
+        padding: 35px 0;
+    }
+}
+
+@media (max-width: 640px) {
+    .hero,
+    .page-hero,
+    .product-hero {
+        min-height: 300px;
+        padding: 25px 0;
+    }
+
+    .product-hero-visual {
+        display: none !important;
+    }
+
+    .product-hero-inner {
+        grid-template-columns: 1fr !important;
+        gap: 0 !important;
+    }
+}
+
+@media (max-width: 420px) {
+    .hero,
+    .page-hero,
+    .product-hero {
+        min-height: 300px;
+        padding: 20px 0;
+    }
+}
+
 /* Reduced motion accessibility */
 @media (prefers-reduced-motion: reduce) {
     .topbar-track {
@@ -1081,3 +1142,4 @@ body > .back-top.visible {
         transition-duration: 0.01ms !important;
     }
 }
+

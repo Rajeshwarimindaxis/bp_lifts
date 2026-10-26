@@ -91,7 +91,12 @@ img {
 ===================================================== */
 .hero {
     position: relative;
-    padding: 85px 0 90px;
+    min-height: 420px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 45px 0;
     background:
         radial-gradient(circle at 85% 30%, rgba(2, 100, 173, 0.38) 0%, transparent 60%),
         linear-gradient(90deg,
@@ -1600,7 +1605,8 @@ img {
 
 @media (max-width: 800px) {
     .hero {
-        padding: 55px 0 60px;
+        min-height: 360px;
+        padding: 35px 0;
     }
 
     .hero-actions {
@@ -2029,6 +2035,13 @@ img {
 }
 
 /* Mobile responsiveness */
+@media (max-width: 640px) {
+    .hero {
+        min-height: 300px;
+        padding: 25px 0;
+    }
+}
+
 @media (max-width: 520px) {
     .about-home-actions .btn {
         width: 100%;

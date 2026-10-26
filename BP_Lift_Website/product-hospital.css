@@ -63,7 +63,12 @@ main * {
 ===================================================== */
 .product-hero {
     position: relative;
-    padding: 85px 0 90px;
+    min-height: 420px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 45px 0;
     background:
         radial-gradient(circle at 85% 30%, rgba(6, 182, 212, 0.28) 0%, transparent 60%),
         radial-gradient(circle at 15% 75%, rgba(13, 148, 136, 0.22) 0%, transparent 50%),
@@ -76,6 +81,10 @@ main * {
     color: var(--bp-white);
     border-bottom: 3px solid var(--bp-med-cyan);
     overflow: hidden;
+}
+
+.product-hero > .container {
+    width: 100%;
 }
 
 .product-hero::after {
@@ -304,7 +313,7 @@ main * {
 
 .product-hero-visual img {
     width: 100%;
-    height: 380px;
+    height: 260px;
     object-fit: cover;
     display: block;
     transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
@@ -975,12 +984,18 @@ main * {
 
 @media (max-width: 900px) {
     .product-hero {
-        padding: 55px 0 60px;
+        min-height: 360px;
+        padding: 35px 0;
     }
 
     .product-hero-inner {
-        grid-template-columns: 1fr;
-        gap: 34px;
+        grid-template-columns: 1.25fr 1fr;
+        gap: 22px;
+        align-items: center;
+    }
+
+    .product-hero-visual img {
+        height: 190px;
     }
 
     .planning-grid {
@@ -1009,7 +1024,17 @@ main * {
 
 @media (max-width: 640px) {
     .product-hero {
-        padding: 45px 0 50px;
+        min-height: 300px;
+        padding: 25px 0;
+    }
+
+    .product-hero-inner {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .product-hero-visual {
+        display: none !important;
     }
 
     .features-grid-4,
@@ -1259,6 +1284,11 @@ main * {
 }
 
 @media (max-width: 420px) {
+    .product-hero {
+        min-height: 300px;
+        padding: 20px 0;
+    }
+
     .hero-specs-strip {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
