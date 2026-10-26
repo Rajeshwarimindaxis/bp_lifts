@@ -1624,36 +1624,38 @@ img {
     }
 
     .about-home-grid {
-        grid-template-columns: 1fr;
-        gap: 36px;
+        grid-template-columns: 1fr 1.15fr;
+        gap: 20px;
+        align-items: center;
     }
 
     .about-home-img-wrap {
-        height: 280px;
+        height: 100%;
+        min-height: 280px;
     }
 
     .about-experience-badge {
         bottom: 12px;
         right: 12px;
-        padding: 12px 16px;
+        padding: 10px 14px;
     }
 
     .about-badge-number {
-        font-size: 28px;
+        font-size: 24px;
     }
 
     .about-badge-text {
-        font-size: 11px;
+        font-size: 10px;
     }
 
     .about-home-pills {
         grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 10px;
+        gap: 8px;
     }
 
     .about-pill-item {
-        font-size: 12px;
-        padding: 8px 10px;
+        font-size: 11.5px;
+        padding: 6px 8px;
     }
 
     .grid-3 {
@@ -1982,19 +1984,86 @@ img {
         line-height: 1.35;
     }
 
+    .about-home-grid {
+        grid-template-columns: 1fr 1.15fr;
+        gap: 12px;
+        align-items: center;
+    }
+
     .about-home-img-wrap {
-        height: 220px;
+        height: 100%;
+        min-height: 200px;
+        max-height: 340px;
+    }
+
+    .about-experience-badge {
+        bottom: 8px;
+        right: 8px;
+        padding: 6px 10px;
+        border-radius: 10px;
+    }
+
+    .about-badge-number {
+        font-size: 18px;
+        line-height: 1;
+    }
+
+    .about-badge-text {
+        font-size: 8.5px;
+        line-height: 1.15;
+    }
+
+    .about-home-content .eyebrow {
+        font-size: 10px;
+        padding: 3px 8px;
+        margin-bottom: 6px;
+    }
+
+    .about-home-content h2 {
+        font-size: clamp(13px, 3.8vw, 17px);
+        line-height: 1.25;
+        margin-bottom: 6px;
+    }
+
+    .about-home-lead {
+        font-size: 11px;
+        line-height: 1.35;
+        margin-bottom: 6px;
+    }
+
+    .about-home-p {
+        font-size: 10px;
+        line-height: 1.4;
+        margin-bottom: 8px;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    .about-home-pills {
+        grid-template-columns: 1fr;
+        gap: 4px;
+        margin-bottom: 10px;
+    }
+
+    .about-pill-item {
+        font-size: 10px;
+        padding: 4px 6px;
     }
 
     .about-home-actions {
         flex-direction: column;
-        align-items: stretch;
+        gap: 6px;
     }
 
     .about-home-actions .btn {
         width: 100%;
-        text-align: center;
+        min-height: 36px;
+        padding: 6px 10px;
+        font-size: 10.5px;
         justify-content: center;
+        text-align: center;
     }
 
     .cta-band {
