@@ -840,6 +840,24 @@ main * {
     border-color: #63b3ed;
 }
 
+.cta-hotline-note {
+    font-size: 13.5px;
+    color: #ffffff !important;
+    text-align: center;
+    margin-top: 4px;
+}
+
+.cta-hotline-note a {
+    color: #ffffff !important;
+    font-weight: 700;
+    text-decoration: underline;
+}
+
+.cta-hotline-note a:hover {
+    color: #ffffff !important;
+    text-decoration: none;
+}
+
 /* =====================================================
    7. RELATED ELEVATORS (Car)
 ===================================================== */
