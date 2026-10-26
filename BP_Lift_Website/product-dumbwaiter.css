@@ -1,20 +1,18 @@
 /* =====================================================
    BP LIFTS - DUMBWAITER ELEVATORS STYLESHEET (product-dumbwaiter.css)
-   Theme: Food-Grade Hospitality & Clinic | Culinary Bronze (#D97706) | Stainless Navy (#0D1E3D) | Sanitary Ice Blue (#3B82F6)
+   Theme: White | Light Blue (#0264AD) | Dark Blue (#0B1D6F)
    Tailored for: Commercial Kitchens, Restaurants, Pathology Labs, Pharmacy Dispensaries, Multi-Tier Villas
 ===================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..800;1,9..40,400..800&display=swap');
 
 :root {
-    --bp-dark-blue: #0D1E3D;
-    --bp-dark-blue-hover: #071124;
+    --bp-dark-blue: #0B1D6F;
+    --bp-dark-blue-hover: #071552;
     --bp-light-blue: #0264AD;
-    --bp-dw-bronze: #d97706;
-    --bp-dw-amber: #f59e0b;
-    --bp-dw-blue: #2563eb;
-    --bp-dw-glow: rgba(217, 119, 6, 0.35);
+    --bp-light-blue-hover: #014e88;
     --bp-blue-light: #eff6ff;
+    --bp-blue-glow: rgba(2, 100, 173, 0.28);
     --bp-white: #ffffff;
     --bp-text: #172338;
     --bp-text-muted: #4f6176;
@@ -24,9 +22,9 @@
     --bp-container: 1180px;
     --bp-radius: 8px;
     --bp-radius-lg: 14px;
-    --bp-shadow-sm: 0 4px 14px rgba(13, 30, 61, 0.05);
-    --bp-shadow-md: 0 10px 30px rgba(13, 30, 61, 0.09);
-    --bp-shadow-hover: 0 20px 42px rgba(217, 119, 6, 0.22);
+    --bp-shadow-sm: 0 4px 14px rgba(11, 29, 111, 0.05);
+    --bp-shadow-md: 0 10px 30px rgba(11, 29, 111, 0.09);
+    --bp-shadow-hover: 0 20px 42px rgba(2, 100, 173, 0.22);
     --bp-transition: 0.25s ease;
 }
 
@@ -63,7 +61,7 @@ main * {
 ===================================================== */
 .product-hero {
     position: relative;
-    padding: 85px 0 95px;
+    padding: 85px 0 90px;
     background:
         radial-gradient(circle at 85% 30%, rgba(217, 119, 6, 0.25) 0%, transparent 60%),
         radial-gradient(circle at 15% 75%, rgba(37, 99, 235, 0.22) 0%, transparent 50%),
@@ -102,18 +100,18 @@ main * {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    padding: 6px 14px;
-    background: rgba(217, 119, 6, 0.18);
-    border: 1px solid rgba(217, 119, 6, 0.45);
-    border-radius: 20px;
+    padding: 7px 16px;
+    background: rgba(2, 100, 173, 0.15);
+    border: 1.5px solid rgba(2, 100, 173, 0.45);
+    border-radius: 30px;
     font-size: 13px;
-    color: #fde68a;
-    margin-bottom: 16px;
+    color: #dbe8f5;
+    margin-bottom: 22px;
     backdrop-filter: blur(8px);
 }
 
 .crumb a {
-    color: #f59e0b;
+    color: #63c2ff;
     text-decoration: none;
     font-weight: 600;
     transition: color 0.2s ease;
@@ -129,12 +127,12 @@ main * {
     align-items: center;
     gap: 8px;
     padding: 6px 14px;
-    background: rgba(217, 119, 6, 0.18);
-    border: 1px solid rgba(217, 119, 6, 0.6);
+    background: rgba(2, 100, 173, 0.18);
+    border: 1px solid rgba(2, 100, 173, 0.45);
     border-radius: 20px;
     font-size: 12.5px;
     font-weight: 700;
-    color: #fef3c7;
+    color: #eaf4fc;
     margin-bottom: 16px;
     margin-left: 8px;
 }
@@ -143,22 +141,22 @@ main * {
     width: 8px;
     height: 8px;
     border-radius: 50%;
-    background: #d97706;
-    box-shadow: 0 0 10px #d97706;
+    background: #0264AD;
+    box-shadow: 0 0 10px #0264AD;
     animation: dwPulse 1.8s infinite;
 }
 
 @keyframes dwPulse {
     0% {
-        box-shadow: 0 0 0 0 rgba(217, 119, 6, 0.7);
+        box-shadow: 0 0 0 0 rgba(2, 100, 173, 0.7);
     }
 
     70% {
-        box-shadow: 0 0 0 8px rgba(217, 119, 6, 0);
+        box-shadow: 0 0 0 8px rgba(2, 100, 173, 0);
     }
 
     100% {
-        box-shadow: 0 0 0 0 rgba(217, 119, 6, 0);
+        box-shadow: 0 0 0 0 rgba(2, 100, 173, 0);
     }
 }
 
@@ -167,17 +165,17 @@ main * {
     font-size: clamp(2.3rem, 4.4vw, 3.6rem);
     letter-spacing: -0.8px;
     line-height: 1.18;
-    margin: 0 0 18px 0;
+    margin: 0 0 22px 0;
     font-weight: 800;
 }
 
 .product-hero h1 span.shimmer {
-    background: linear-gradient(90deg, #f59e0b 0%, #ffffff 50%, #d97706 100%);
+    background: linear-gradient(90deg, #63c2ff 0%, #ffffff 50%, #63c2ff 100%);
     background-size: 200% auto;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: dwShimmer 4s ease-in-out infinite;
-    text-shadow: 0 0 25px rgba(217, 119, 6, 0.5);
+    text-shadow: 0 0 25px rgba(2, 100, 173, 0.6);
 }
 
 @keyframes dwShimmer {
@@ -210,7 +208,7 @@ main * {
 
 .hero-spec-item {
     background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(217, 119, 6, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.16);
     border-radius: 10px;
     padding: 10px 14px;
     backdrop-filter: blur(6px);
@@ -219,8 +217,8 @@ main * {
 
 .hero-spec-item:hover {
     transform: translateY(-2px);
-    border-color: #d97706;
-    box-shadow: 0 4px 15px rgba(217, 119, 6, 0.25);
+    border-color: #63c2ff;
+    box-shadow: 0 4px 15px rgba(2, 100, 173, 0.25);
 }
 
 .hero-spec-label {
@@ -228,7 +226,7 @@ main * {
     font-size: 11px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    color: #fde68a;
+    color: #9ac7ec;
     font-weight: 700;
     margin-bottom: 3px;
 }
@@ -253,21 +251,21 @@ main * {
     align-items: center;
     gap: 8px;
     padding: 13px 26px;
-    background: linear-gradient(135deg, #d97706 0%, #f59e0b 100%);
-    color: #071124;
+    background: linear-gradient(135deg, #0264AD 0%, #00a2ff 100%);
+    color: #ffffff;
     font-size: 15px;
     font-weight: 800;
     text-decoration: none;
     border-radius: 30px;
-    box-shadow: 0 6px 22px rgba(217, 119, 6, 0.4);
+    box-shadow: 0 6px 22px rgba(2, 100, 173, 0.4);
     transition: all 0.3s ease;
 }
 
 .btn-hero-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 10px 28px rgba(245, 158, 11, 0.55);
-    background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%);
-    color: #000000;
+    box-shadow: 0 10px 28px rgba(2, 100, 173, 0.55);
+    background: linear-gradient(135deg, #014e88 0%, #0264AD 100%);
+    color: #ffffff;
 }
 
 .btn-hero-secondary {
@@ -289,7 +287,7 @@ main * {
 .btn-hero-secondary:hover {
     background: rgba(255, 255, 255, 0.22);
     color: #ffffff;
-    border-color: #fde68a;
+    border-color: #63c2ff;
 }
 
 /* Product Hero Visual Card */
@@ -298,7 +296,7 @@ main * {
     border-radius: 16px;
     overflow: hidden;
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
-    border: 2px solid rgba(217, 119, 6, 0.4);
+    border: 2px solid rgba(2, 100, 173, 0.35);
     background: #0D1E3D;
 }
 
@@ -324,7 +322,7 @@ main * {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-top: 1px solid rgba(217, 119, 6, 0.25);
+    border-top: 1px solid rgba(2, 100, 173, 0.25);
     font-size: 13px;
     font-weight: 700;
     color: #ffffff;
@@ -332,7 +330,7 @@ main * {
 }
 
 .visual-hud-tag {
-    color: #f59e0b;
+    color: #38bdf8;
     display: inline-flex;
     align-items: center;
     gap: 6px;
@@ -363,7 +361,7 @@ main * {
 
 .eyebrow {
     display: inline-block;
-    color: #d97706;
+    color: var(--bp-light-blue);
     font-size: 12.5px;
     font-weight: 800;
     letter-spacing: 1.2px;
@@ -418,7 +416,7 @@ main * {
     left: 0;
     right: 0;
     height: 3px;
-    background: linear-gradient(90deg, #d97706, #2563eb);
+    background: linear-gradient(90deg, #0264AD, #00a2ff);
     opacity: 0;
     transition: opacity 0.3s ease;
 }
@@ -426,8 +424,8 @@ main * {
 .feature-card:hover,
 .feat-card:hover {
     transform: translateY(-6px);
-    box-shadow: 0 16px 36px rgba(217, 119, 6, 0.18);
-    border-color: rgba(217, 119, 6, 0.45);
+    box-shadow: 0 16px 36px rgba(2, 100, 173, 0.18);
+    border-color: rgba(2, 100, 173, 0.45);
 }
 
 .feature-card:hover::before,
@@ -440,8 +438,8 @@ main * {
     width: 52px;
     height: 52px;
     border-radius: 12px;
-    background: #fef3c7;
-    color: #b45309;
+    background: #eaf4fc;
+    color: var(--bp-light-blue);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -452,7 +450,7 @@ main * {
 
 .feature-card:hover .feature-icon-wrap,
 .feat-card:hover .feat-icon {
-    background: #b45309;
+    background: var(--bp-light-blue);
     color: #ffffff;
     transform: scale(1.05);
 }
@@ -485,7 +483,7 @@ main * {
 }
 
 .specs-table-header {
-    background: linear-gradient(135deg, #071124 0%, #0D1E3D 100%);
+    background: linear-gradient(135deg, #071552 0%, #0B1D6F 100%);
     color: #ffffff;
     padding: 22px 28px;
     display: flex;
@@ -493,7 +491,7 @@ main * {
     align-items: center;
     flex-wrap: wrap;
     gap: 12px;
-    border-bottom: 2px solid #d97706;
+    border-bottom: 2px solid var(--bp-light-blue);
 }
 
 .specs-table-header h3 {
@@ -508,12 +506,12 @@ main * {
     align-items: center;
     gap: 6px;
     padding: 6px 14px;
-    background: rgba(217, 119, 6, 0.2);
+    background: rgba(2, 100, 173, 0.2);
     border-radius: 20px;
     font-size: 12.5px;
     font-weight: 700;
-    color: #fde68a;
-    border: 1px solid rgba(217, 119, 6, 0.4);
+    color: #63c2ff;
+    border: 1px solid rgba(2, 100, 173, 0.4);
 }
 
 .table-responsive {
@@ -535,7 +533,7 @@ main * {
 }
 
 .specs-table th {
-    background: #fbf7ed;
+    background: #f4f8fc;
     color: var(--bp-dark-blue);
     font-weight: 800;
     font-size: 13px;
@@ -544,7 +542,7 @@ main * {
 }
 
 .specs-table tbody tr:hover {
-    background: #fef8ee;
+    background: #eaf4fc;
 }
 
 .specs-table tbody tr:last-child td {
@@ -604,11 +602,12 @@ main * {
 
 .guidelines-list li,
 .planning-list li {
-    display: flex;
-    align-items: flex-start;
-    gap: 12px;
-    font-size: 14.5px;
-    line-height: 1.6;
+    list-style: none;
+    position: relative;
+    padding-left: 20px;
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.55;
     color: var(--bp-text);
 }
 
@@ -617,25 +616,29 @@ main * {
 .planning-list li b,
 .planning-list li strong {
     color: var(--bp-dark-blue);
+    display: inline;
 }
 
 .guidelines-list li span.check,
 .bullet-check {
-    color: #b45309;
-    font-weight: 900;
-    font-size: 16px;
-    line-height: 1.4;
-    flex-shrink: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #0264AD;
+    font-weight: 800;
+    font-size: 15px;
+    line-height: 1.55;
+    display: inline-block;
 }
 
 .planning-callout {
     margin-top: auto;
     padding: 16px 20px;
-    background: #fef3c7;
-    border-left: 4px solid #b45309;
+    background: #eef7fc;
+    border-left: 4px solid var(--bp-light-blue);
     border-radius: 6px;
     font-size: 13.5px;
-    color: #78350f;
+    color: var(--bp-dark-blue);
     line-height: 1.6;
 }
 
@@ -659,8 +662,8 @@ main * {
 
 .finish-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 16px 36px rgba(217, 119, 6, 0.2);
-    border-color: #d97706;
+    box-shadow: 0 16px 36px rgba(2, 100, 173, 0.2);
+    border-color: var(--bp-light-blue);
 }
 
 .finish-media {
@@ -680,15 +683,15 @@ main * {
 }
 
 .finish-media.finish-gold {
-    background: linear-gradient(135deg, #78350f 0%, #b45309 50%, #92400e 100%);
+    background: linear-gradient(135deg, #071552 0%, #0B1D6F 50%, #0264AD 100%);
 }
 
 .finish-media.finish-glass {
-    background: linear-gradient(135deg, #1d4ed8 0%, #3b82f6 50%, #1e3a8a 100%);
+    background: linear-gradient(135deg, #0264AD 0%, #38bdf8 50%, #0B1D6F 100%);
 }
 
 .finish-media.finish-wood {
-    background: linear-gradient(135deg, #b45309 0%, #d97706 50%, #78350f 100%);
+    background: linear-gradient(135deg, #0B1D6F 0%, #1e3a5f 50%, #071552 100%);
 }
 
 .finish-body {
@@ -731,16 +734,16 @@ main * {
 }
 
 .safety-card:hover {
-    border-color: #d97706;
-    box-shadow: 0 8px 24px rgba(217, 119, 6, 0.15);
+    border-color: var(--bp-light-blue);
+    box-shadow: 0 8px 24px rgba(2, 100, 173, 0.15);
 }
 
 .safety-icon {
     width: 44px;
     height: 44px;
     border-radius: 50%;
-    background: #fef3c7;
-    color: #b45309;
+    background: #eaf4fc;
+    color: var(--bp-light-blue);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -771,7 +774,7 @@ main * {
 
 .cta-band-box,
 .cta-band {
-    background: linear-gradient(135deg, #071124 0%, #0D1E3D 60%, #1e3a5f 100%);
+    background: linear-gradient(135deg, #071552 0%, #0B1D6F 60%, #0264AD 100%);
     color: #ffffff;
     padding: 50px 55px;
     border-radius: 18px;
@@ -780,7 +783,7 @@ main * {
     align-items: center;
     gap: 34px;
     box-shadow: 0 20px 50px rgba(7, 17, 36, 0.35);
-    border: 1px solid rgba(217, 119, 6, 0.35);
+    border: 1px solid rgba(2, 100, 173, 0.35);
 }
 
 .cta-band-box h2,
@@ -793,7 +796,7 @@ main * {
 
 .cta-band-box p,
 .cta-band p {
-    color: #fde68a;
+    color: #dbe8f5;
     font-size: 16px;
     margin: 0;
     max-width: 640px;
@@ -815,22 +818,22 @@ main * {
     justify-content: center;
     gap: 8px;
     padding: 14px 28px;
-    background: linear-gradient(135deg, #d97706 0%, #f59e0b 100%);
-    color: #071124;
+    background: linear-gradient(135deg, #0264AD 0%, #00a2ff 100%);
+    color: #ffffff;
     font-size: 15px;
     font-weight: 800;
     text-decoration: none;
     border-radius: 30px;
     transition: all 0.3s ease;
-    box-shadow: 0 6px 20px rgba(217, 119, 6, 0.4);
+    box-shadow: 0 6px 20px rgba(2, 100, 173, 0.4);
 }
 
 .btn-band-primary:hover,
 .btn-cta-primary:hover {
-    background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%);
-    color: #000000;
+    background: linear-gradient(135deg, #014e88 0%, #0264AD 100%);
+    color: #ffffff;
     transform: translateY(-2px);
-    box-shadow: 0 8px 26px rgba(217, 119, 6, 0.55);
+    box-shadow: 0 8px 26px rgba(2, 100, 173, 0.55);
 }
 
 .btn-band-secondary {
@@ -851,7 +854,7 @@ main * {
 
 .btn-band-secondary:hover {
     background: rgba(255, 255, 255, 0.24);
-    border-color: #fde68a;
+    border-color: #63c2ff;
 }
 
 /* =====================================================
@@ -879,7 +882,7 @@ main * {
 .related-card:hover {
     transform: translateY(-6px);
     box-shadow: var(--bp-shadow-hover);
-    border-color: #d97706;
+    border-color: var(--bp-light-blue);
     text-decoration: none !important;
 }
 
@@ -937,7 +940,7 @@ main * {
     gap: 6px;
     font-size: 13.5px;
     font-weight: 700;
-    color: #b45309;
+    color: var(--bp-light-blue);
     text-decoration: none !important;
     margin-top: auto;
     transition: color 0.2s ease;
@@ -970,6 +973,10 @@ main * {
 }
 
 @media (max-width: 900px) {
+    .product-hero {
+        padding: 55px 0 60px;
+    }
+
     .product-hero-inner {
         grid-template-columns: 1fr;
         gap: 34px;
@@ -1000,6 +1007,9 @@ main * {
 }
 
 @media (max-width: 640px) {
+    .product-hero {
+        padding: 45px 0 50px;
+    }
 
     .features-grid-4,
     .feat-grid-4,
@@ -1009,6 +1019,29 @@ main * {
     .planning-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 10px;
+    }
+
+    .planning-card {
+        padding: 14px 10px;
+    }
+
+    .planning-card h3 {
+        font-size: 13px;
+        line-height: 1.25;
+        margin-bottom: 8px;
+    }
+
+    .guidelines-list li,
+    .planning-list li {
+        font-size: 10.5px;
+        line-height: 1.35;
+        gap: 5px;
+    }
+
+    .planning-callout {
+        font-size: 10px;
+        padding: 6px 8px;
+        margin-top: 10px;
     }
 
     .hero-specs-strip {
@@ -1170,7 +1203,7 @@ main * {
         font-size: 11px;
         font-weight: 700;
         line-height: 1.35;
-        color: #b45309;
+        color: var(--bp-light-blue);
         text-decoration: none !important;
         margin-top: auto;
         white-space: normal;
@@ -1210,22 +1243,40 @@ main * {
 
     .guidelines-list,
     .planning-list {
-        gap: 10px;
+        list-style: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        gap: 8px;
     }
 
     .guidelines-list li,
     .planning-list li {
-        font-size: 11px;
-        line-height: 1.45;
-        gap: 6px;
+        list-style: none !important;
+        display: block !important;
+        position: relative !important;
+        padding-left: 14px !important;
+        margin: 0 !important;
+        font-size: 10.5px;
+        line-height: 1.4;
         word-break: break-word;
+    }
+
+    .guidelines-list li b,
+    .guidelines-list li strong,
+    .planning-list li b,
+    .planning-list li strong {
+        display: inline !important;
     }
 
     .guidelines-list li span.check,
     .bullet-check {
-        font-size: 12px;
-        line-height: 1.3;
-        flex-shrink: 0;
+        position: absolute !important;
+        left: 0 !important;
+        top: 0 !important;
+        color: #0264AD;
+        font-size: 11px;
+        line-height: 1.4;
+        display: inline-block !important;
     }
 
     .planning-callout {
@@ -1278,7 +1329,6 @@ main * {
     .planning-list li {
         font-size: 10px;
         line-height: 1.4;
-        gap: 5px;
     }
 
     .planning-callout {

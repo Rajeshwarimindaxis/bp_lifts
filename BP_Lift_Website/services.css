@@ -86,7 +86,7 @@ img {
 ===================================================== */
 .page-hero {
     position: relative;
-    padding: 75px 0 80px;
+    padding: 85px 0 90px;
     background:
         radial-gradient(circle at 85% 30%, rgba(45, 156, 219, 0.22) 0%, transparent 55%),
         linear-gradient(90deg,
@@ -96,7 +96,7 @@ img {
         url("images/servicesbg.png") center right / cover no-repeat;
     background-color: #061a40;
     color: var(--bp-white);
-    border-bottom: 3.5px solid var(--bp-light-blue);
+    border-bottom: 3px solid var(--bp-light-blue);
     overflow: hidden;
 }
 
@@ -113,20 +113,23 @@ img {
 .page-hero .container {
     position: relative;
     z-index: 2;
-    max-width: 820px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
 }
 
 .crumb {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    padding: 6px 14px;
+    padding: 7px 16px;
     background: rgba(2, 100, 173, 0.28);
-    border: 1px solid rgba(99, 194, 255, 0.4);
-    border-radius: 20px;
-    font-size: 12.5px;
+    border: 1.5px solid rgba(99, 194, 255, 0.45);
+    border-radius: 30px;
+    font-size: 13px;
     color: #d1e2f2;
-    margin-bottom: 16px;
+    margin-bottom: 22px;
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
 }
@@ -145,19 +148,22 @@ img {
 
 .page-hero h1 {
     color: var(--bp-white);
-    font-size: clamp(2rem, 3.8vw, 3.1rem);
-    letter-spacing: -0.5px;
-    margin-bottom: 14px;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.45);
+    font-size: clamp(2.4rem, 5vw, 4rem);
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -1px;
+    margin-bottom: 22px;
+    max-width: 840px;
+    text-shadow: 0 2px 14px rgba(0, 0, 0, 0.55);
 }
 
 .page-hero p {
-    color: #e2effa;
-    font-size: clamp(0.95rem, 1.6vw, 1.15rem);
-    line-height: 1.65;
+    color: #d1e2f2;
+    font-size: clamp(1.05rem, 1.8vw, 1.25rem);
+    line-height: 1.7;
     margin-bottom: 0;
-    max-width: 720px;
-    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.35);
+    max-width: 760px;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.45);
 }
 
 /* =====================================================
@@ -872,7 +878,7 @@ img {
 
 @media (max-width: 850px) {
     .page-hero {
-        padding: 50px 0 55px;
+        padding: 55px 0 60px;
     }
 
     .section {
@@ -901,8 +907,8 @@ img {
     }
 
     .service-features-grid {
-        grid-template-columns: 1fr;
-        gap: 10px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px 14px;
         margin-bottom: 22px;
     }
 
@@ -921,7 +927,7 @@ img {
 
 @media (max-width: 580px) {
     .page-hero {
-        padding: 42px 0 46px;
+        padding: 45px 0 50px;
     }
 
     .section {
@@ -955,45 +961,73 @@ img {
         margin-bottom: 16px;
     }
 
+    .service-features-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px 10px;
+        margin-bottom: 18px;
+        padding-top: 10px;
+    }
+
     .feature-item {
-        font-size: 12px;
+        font-size: 11px;
+        line-height: 1.35;
+        gap: 6px;
+        padding: 2px 0;
+    }
+
+    .feature-icon {
+        width: 18px;
+        height: 18px;
+        font-size: 9px;
+        flex-shrink: 0;
     }
 
     .ideology-card {
-        padding: 26px 20px;
-        margin-bottom: 32px;
+        padding: 24px 18px;
+        margin-bottom: 28px;
     }
 
     .ideology-card h2 {
-        font-size: 1.3rem;
+        font-size: 1.25rem;
     }
 
     .ideology-card p {
-        font-size: 12.5px;
+        font-size: 12px;
     }
 
     .pillars-grid {
-        grid-template-columns: 1fr;
-        gap: 12px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
     }
 
     .pillar-card {
-        padding: 18px 16px;
-        gap: 14px;
+        padding: 14px 10px;
+        gap: 10px;
+        flex-direction: column;
+        align-items: flex-start;
+        border-radius: var(--bp-radius);
     }
 
     .pillar-icon {
-        width: 38px;
-        height: 38px;
-        font-size: 13px;
+        width: 34px;
+        height: 34px;
+        font-size: 12px;
+        border-radius: 8px;
     }
 
     .pillar-body h4 {
-        font-size: 14px;
+        font-size: 13px;
+        line-height: 1.25;
+        margin-bottom: 4px;
     }
 
     .pillar-body p {
-        font-size: 12px;
+        font-size: 11px;
+        line-height: 1.35;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
     }
 
     .cta-band {

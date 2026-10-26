@@ -72,9 +72,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   document.querySelectorAll("[data-year]").forEach(el => el.textContent = new Date().getFullYear());
 
-  // Functional quote/inquiry form email handler (target: rajeshwariarekar7@gmail.com)
+  // Functional quote/inquiry form email handler (target: bpliftspune@gmail.com)
   document.querySelectorAll(".quote-form").forEach(form => {
-    // If the form handles its own submission (e.g. contact page with captcha), do not override
+    // If the form handles its own submission (e.g. contact page), do not override
     if (form.dataset.managed === "true") return;
 
     form.addEventListener("submit", event => {
@@ -104,7 +104,7 @@ document.addEventListener("DOMContentLoaded", () => {
         `Please contact me at your earliest convenience.\n`
       );
 
-      const targetEmail = 'rajeshwariarekar7@gmail.com';
+      const targetEmail = 'bpliftspune@gmail.com';
       const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${targetEmail}&su=${subject}&body=${body}`;
       const mailtoUrl = `mailto:${targetEmail}?subject=${subject}&body=${body}`;
 

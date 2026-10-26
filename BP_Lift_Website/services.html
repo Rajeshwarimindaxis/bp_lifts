@@ -59,21 +59,7 @@
           </div>
         </div>
 
-        <!-- OUR SERVICES DROPDOWN -->
-        <div class="nav-dropdown">
-          <a href="services.html" class="nav-dropdown-toggle active" data-page="services" aria-haspopup="true"
-            aria-expanded="false">
-            Our Services <span class="dropdown-arrow">▾</span>
-          </a>
-          <div class="dropdown-menu" role="menu">
-            <a href="services.html" class="dropdown-all">All Services <span>→</span></a>
-            <div class="dropdown-divider"></div>
-            <a href="services.html#repair">Elevator Repairs</a>
-            <a href="services.html#maintenance">Annual Maintenance (AMC)</a>
-            <a href="services.html#modernization">Modernization / Upgradation</a>
-            <a href="services.html#installation">New Installations</a>
-          </div>
-        </div>
+        <a href="services.html" data-page="services" class="active">Our Services</a>
 
         <a href="contact.html" data-page="contact">Contact Us</a>
         <a class="btn btn-primary" href="contact.html#quote">Get a Quote <span>↗</span></a>
@@ -438,14 +424,8 @@
 
   <script>
     document.querySelectorAll('.nav-links [data-page="services"]').forEach(link => link.classList.add('active'));
-
-    // ========================================================
-    // SERVICES SCROLL REVEAL ANIMATIONS
-    // ========================================================
     (function initServicesPage() {
       const revealElements = document.querySelectorAll('.reveal-card');
-
-      // Scroll Reveal via IntersectionObserver
       if ('IntersectionObserver' in window) {
         const revealObserver = new IntersectionObserver((entries, observer) => {
           entries.forEach(entry => {
@@ -462,7 +442,6 @@
 
         revealElements.forEach(el => revealObserver.observe(el));
       } else {
-        // Fallback for older browsers
         revealElements.forEach(el => el.classList.add('is-visible'));
       }
     })();

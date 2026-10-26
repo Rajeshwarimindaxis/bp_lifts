@@ -59,21 +59,7 @@
           </div>
         </div>
 
-        <!-- OUR SERVICES DROPDOWN -->
-        <div class="nav-dropdown">
-          <a href="services.html" class="nav-dropdown-toggle" data-page="services" aria-haspopup="true"
-            aria-expanded="false">
-            Our Services <span class="dropdown-arrow">▾</span>
-          </a>
-          <div class="dropdown-menu" role="menu">
-            <a href="services.html" class="dropdown-all">All Services <span>→</span></a>
-            <div class="dropdown-divider"></div>
-            <a href="services.html#repair">Elevator Repairs</a>
-            <a href="services.html#maintenance">Annual Maintenance (AMC)</a>
-            <a href="services.html#modernization">Modernization / Upgradation</a>
-            <a href="services.html#installation">New Installations</a>
-          </div>
-        </div>
+        <a href="services.html" data-page="services">Our Services</a>
 
         <a href="contact.html" data-page="contact">Contact Us</a>
         <a class="btn btn-primary" href="contact.html#quote">Get a Quote <span>↗</span></a>
@@ -87,6 +73,8 @@
     <section class="hero">
       <div class="container hero-grid">
         <div class="hero-content">
+          <div class="hero-eyebrow reveal-fade-up"><span class="eyebrow-dot"></span> Pune’s Trusted Elevator Engineering
+            Since 2000</div>
           <h1 class="reveal-fade-up">Great Companies Are Built On <span class="hero-shimmer">Great Products.</span></h1>
           <p class="reveal-fade-up">Satisfying customer need is not just a statement at BP LIFTS, but it is our
             operating ideology. For 24
@@ -98,7 +86,7 @@
     </section>
 
     <!-- STATS BAR -->
-    <section class="section section-soft" style="padding: 40px 0 20px;">
+    <section class="section section-stats" style="padding: 44px 0 36px;">
       <div class="container">
         <div class="stats-grid">
           <div class="stat-card reveal-card reveal-from-left">
@@ -138,7 +126,7 @@
 
           <!-- Right: Content & Key Highlights (Coming from RIGHT) -->
           <div class="about-home-content reveal-card reveal-from-right">
-            <div class="eyebrow">About BP LIFTS</div>
+            <div class="eyebrow"><span class="eyebrow-dot"></span> About BP LIFTS</div>
             <h2>Pune’s Trusted Elevator Engineering &amp; Maintenance Partner</h2>
             <p class="about-home-lead">"Satisfying customer need is not just a statement at BP LIFTS, but it is our
               operating ideology."</p>
@@ -180,7 +168,7 @@
     <section class="section" id="services">
       <div class="container">
         <div class="section-head reveal-fade-up">
-          <div class="eyebrow">Our Services</div>
+          <div class="eyebrow"><span class="eyebrow-dot"></span> Our Services</div>
           <h2>Comprehensive Elevator Engineering &amp; <span class="hero-shimmer">After-Sales Care</span></h2>
           <p>Over two decades of precision vertical engineering, preventive AMC maintenance, and 24/7 emergency response
             across Pune.</p>
@@ -299,7 +287,7 @@
       <div class="container">
         <div class="section-head products-header-wrap">
           <div>
-            <div class="eyebrow">Our Products</div>
+            <div class="eyebrow"><span class="eyebrow-dot"></span> Our Products</div>
             <h2>Engineered For Every Building &amp; Load Requirement</h2>
             <p>Explore our complete elevator product line designed in accordance with strict international safety
               standards and architectural elegance.</p>
@@ -431,8 +419,8 @@
             alt="BP LIFTS Engineering Center Pune">
         </div>
         <div class="split-copy reveal-card reveal-from-right">
-          <div class="eyebrow">Our Operating Ideology</div>
-          <h2>Satisfying Customer Need Is Our Core Philosophy.</h2>
+          <div class="eyebrow"><span class="eyebrow-dot"></span> Our Operating Ideology</div>
+          <h2>Satisfying <span class="text-blue">Customer Need</span> Is Our Core Philosophy.</h2>
           <p>Operating for 24 years, BP LIFTS has built lasting trust across Pune. We don't just sell elevators; we
             build long-term mobility partnerships backed by meticulous engineering and responsive customer support.</p>
 
@@ -842,8 +830,6 @@
         }
       });
     }
-
-    // Initialize all enhancements
     let isInitialized = false;
     function initAllAnimations() {
       if (isInitialized) return;
@@ -853,7 +839,6 @@
       initServicesSpotlight();
       initProductsCarousel();
     }
-
     document.addEventListener('DOMContentLoaded', initAllAnimations);
     if (document.readyState === 'complete' || document.readyState === 'interactive') {
       initAllAnimations();

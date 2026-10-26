@@ -117,23 +117,23 @@ img {
 .page-hero .container {
     position: relative;
     z-index: 2;
-    max-width: 840px;
-    margin-inline: 0;
-    margin-left: auto;
-    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
 }
 
 .crumb {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    padding: 6px 14px;
+    padding: 7px 16px;
     background: rgba(2, 100, 173, 0.28);
-    border: 1px solid rgba(99, 194, 255, 0.4);
-    border-radius: 20px;
+    border: 1.5px solid rgba(99, 194, 255, 0.45);
+    border-radius: 30px;
     font-size: 13px;
     color: #d1e2f2;
-    margin-bottom: 18px;
+    margin-bottom: 22px;
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
 }
@@ -152,17 +152,21 @@ img {
 
 .page-hero h1 {
     color: var(--bp-white);
-    font-size: clamp(2.2rem, 4.2vw, 3.4rem);
-    letter-spacing: -0.5px;
-    margin-bottom: 16px;
+    font-size: clamp(2.4rem, 5vw, 4rem);
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -1px;
+    margin-bottom: 22px;
+    max-width: 840px;
     text-shadow: 0 2px 14px rgba(0, 0, 0, 0.55);
 }
 
 .page-hero p {
-    color: #e2effa;
-    font-size: clamp(1rem, 1.8vw, 1.2rem);
+    color: #d1e2f2;
+    font-size: clamp(1.05rem, 1.8vw, 1.25rem);
     line-height: 1.7;
     margin-bottom: 0;
+    max-width: 760px;
     text-shadow: 0 1px 6px rgba(0, 0, 0, 0.45);
 }
 
