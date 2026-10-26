@@ -1172,6 +1172,7 @@ img {
 ===================================================== */
 .section.section-stats {
     background: linear-gradient(180deg, #edf5fd 0%, #f7fbfe 100%);
+    border-top: 1.5px solid rgba(2, 100, 173, 0.14);
     border-bottom: 1.5px solid rgba(2, 100, 173, 0.14);
 }
 
