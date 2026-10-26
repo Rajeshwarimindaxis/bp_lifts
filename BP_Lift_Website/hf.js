@@ -72,8 +72,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   document.querySelectorAll("[data-year]").forEach(el => el.textContent = new Date().getFullYear());
 
-  // Functional quote/inquiry form email handler
+  // Functional quote/inquiry form email handler (target: rajeshwariarekar7@gmail.com)
   document.querySelectorAll(".quote-form").forEach(form => {
+    // If the form handles its own submission (e.g. contact page with captcha), do not override
+    if (form.dataset.managed === "true") return;
+
     form.addEventListener("submit", event => {
       event.preventDefault();
       const name = form.querySelector('[name="name"]')?.value || 'Client';
@@ -101,15 +104,16 @@ document.addEventListener("DOMContentLoaded", () => {
         `Please contact me at your earliest convenience.\n`
       );
 
-      const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=bpliftspune@gmail.com&su=${subject}&body=${body}`;
-      const mailtoUrl = `mailto:bpliftspune@gmail.com?subject=${subject}&body=${body}`;
+      const targetEmail = 'rajeshwariarekar7@gmail.com';
+      const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${targetEmail}&su=${subject}&body=${body}`;
+      const mailtoUrl = `mailto:${targetEmail}?subject=${subject}&body=${body}`;
 
       // Attempt to open Gmail web compose first (works everywhere), fallback to mailto
       const win = window.open(gmailUrl, '_blank');
       if (!win) {
         window.location.href = mailtoUrl;
       }
-      alert(`Thank you, ${name}! Your elevator enquiry has been prepared and opened in your email to send directly to bpliftspune@gmail.com.`);
+      alert(`Thank you, ${name}! Your elevator enquiry has been prepared and opened in your email to send directly to ${targetEmail}.`);
       form.reset();
     });
   });

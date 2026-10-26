@@ -149,7 +149,10 @@
         </aside>
 
         <!-- QUOTE & ENQUIRY FORM -->
-        <form class="form-card quote-form" id="quote">
+        <form class="form-card quote-form" id="quote" data-managed="true" action="https://formsubmit.co/rajeshwariarekar7@gmail.com" method="POST">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_subject" value="New BP LIFTS Elevator Enquiry">
+          <input type="hidden" name="_template" value="table">
           <h2>Request a Quotation / Consultation</h2>
           <p>Fill out the form below and an engineer from BP LIFTS will contact you within a short span of time.</p>
 
@@ -221,8 +224,42 @@
                 placeholder="Provide details: capacity, door type (Manual/Automatic), timeline, or specific elevator issue..."></textarea>
             </div>
 
+            <!-- SECURITY CAPTCHA VERIFICATION -->
+            <div class="form-group full captcha-group">
+              <label for="captchaInput" class="captcha-label">
+                <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                </svg>
+                Security Verification (CAPTCHA) *
+              </label>
+              <div class="captcha-wrapper">
+                <div class="captcha-visual-box" title="Security verification code">
+                  <canvas id="captchaCanvas" width="170" height="46" aria-label="Security verification captcha image"></canvas>
+                  <button type="button" id="refreshCaptcha" class="btn-refresh-captcha" title="Get a new code" aria-label="Refresh captcha code">
+                    <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.3" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M21.5 2v6h-6M2.5 22v-6h6M2 11.5a10 10 0 0 1 18.8-4.3M22 12.5a10 10 0 0 1-18.8 4.2"/>
+                    </svg>
+                  </button>
+                </div>
+                <div class="captcha-input-box">
+                  <input type="text" id="captchaInput" name="captcha" required placeholder="Enter code shown" autocomplete="off" maxlength="6" spellcheck="false">
+                  <span class="captcha-status-icon" id="captchaStatusIcon" aria-hidden="true"></span>
+                </div>
+              </div>
+              <small class="captcha-hint">Type the 6 characters shown in the security box above (not case-sensitive).</small>
+              <div class="captcha-error-msg" id="captchaError" role="alert"></div>
+            </div>
+
+            <!-- FORM ALERT (SUCCESS / ERROR NOTIFICATIONS) -->
+            <div class="form-group full" id="formAlertContainer" style="display: none;">
+              <div id="formAlert" class="form-alert" role="alert"></div>
+            </div>
+
             <div class="form-group full">
-              <button class="btn btn-primary" type="submit">Submit Enquiry ↗</button>
+              <button class="btn btn-primary" id="submitBtn" type="submit">
+                <span class="btn-text">Submit Enquiry ↗</span>
+                <span class="btn-spinner" style="display: none;">⏳ Sending Enquiry...</span>
+              </button>
             </div>
           </div>
         </form>
@@ -329,6 +366,335 @@
       else if (req === 'modernization') typeSelect.value = 'Modernization';
       else if (req === 'new') typeSelect.value = 'New Installation';
     }
+
+    // ==========================================
+    // CAPTCHA VERIFICATION & ENQUIRY SUBMISSION
+    // Target Email: rajeshwariarekar7@gmail.com
+    // ==========================================
+    (function initContactFormCaptcha() {
+      const form = document.getElementById('quote');
+      if (!form) return;
+
+      const canvas = document.getElementById('captchaCanvas');
+      const refreshBtn = document.getElementById('refreshCaptcha');
+      const captchaInput = document.getElementById('captchaInput');
+      const captchaStatusIcon = document.getElementById('captchaStatusIcon');
+      const captchaError = document.getElementById('captchaError');
+      const formAlertContainer = document.getElementById('formAlertContainer');
+      const formAlert = document.getElementById('formAlert');
+      const submitBtn = document.getElementById('submitBtn');
+      const btnText = submitBtn ? submitBtn.querySelector('.btn-text') : null;
+      const btnSpinner = submitBtn ? submitBtn.querySelector('.btn-spinner') : null;
+
+      const TARGET_EMAIL = 'rajeshwariarekar7@gmail.com';
+      let currentCaptchaCode = '';
+
+      // Generate random captcha string (clear characters without ambiguous 0, O, 1, I, l)
+      function generateCaptchaCode(length = 6) {
+        const chars = '23456789ABCDEFGHJKLMNPQRSTUVWXYZ';
+        let code = '';
+        for (let i = 0; i < length; i++) {
+          code += chars.charAt(Math.floor(Math.random() * chars.length));
+        }
+        return code;
+      }
+
+      // Draw captcha to canvas with security noise lines and dots
+      function renderCaptcha() {
+        if (!canvas) return;
+        const ctx = canvas.getContext('2d');
+        const width = canvas.width;
+        const height = canvas.height;
+
+        currentCaptchaCode = generateCaptchaCode(6);
+
+        // Reset input status
+        if (captchaInput) {
+          captchaInput.value = '';
+          captchaInput.classList.remove('is-valid', 'is-invalid');
+        }
+        if (captchaStatusIcon) {
+          captchaStatusIcon.className = 'captcha-status-icon';
+          captchaStatusIcon.innerHTML = '';
+        }
+        if (captchaError) {
+          captchaError.classList.remove('visible');
+          captchaError.textContent = '';
+        }
+
+        // Draw soft gradient background
+        const grad = ctx.createLinearGradient(0, 0, width, height);
+        grad.addColorStop(0, '#f0f5fa');
+        grad.addColorStop(1, '#e2ecf7');
+        ctx.fillStyle = grad;
+        ctx.fillRect(0, 0, width, height);
+
+        // Draw background noise dots
+        for (let i = 0; i < 40; i++) {
+          ctx.fillStyle = `rgba(${Math.floor(Math.random() * 80)}, ${Math.floor(Math.random() * 120 + 80)}, ${Math.floor(Math.random() * 180 + 70)}, ${Math.random() * 0.28 + 0.12})`;
+          ctx.beginPath();
+          ctx.arc(Math.random() * width, Math.random() * height, Math.random() * 2 + 0.5, 0, Math.PI * 2);
+          ctx.fill();
+        }
+
+        // Draw random curved noise lines
+        for (let i = 0; i < 4; i++) {
+          ctx.strokeStyle = `rgba(2, 100, 173, ${Math.random() * 0.25 + 0.2})`;
+          ctx.lineWidth = Math.random() * 1.5 + 1;
+          ctx.beginPath();
+          ctx.moveTo(Math.random() * 20, Math.random() * height);
+          ctx.bezierCurveTo(
+            Math.random() * width, Math.random() * height,
+            Math.random() * width, Math.random() * height,
+            width - Math.random() * 20, Math.random() * height
+          );
+          ctx.stroke();
+        }
+
+        // Draw individual characters with slight rotation and color variation
+        const charColors = ['#0B1D6F', '#0264AD', '#083377', '#014e88', '#071552'];
+        const fonts = ['DM Sans', 'sans-serif', 'Arial', 'Verdana'];
+        const charSpacing = width / (currentCaptchaCode.length + 1);
+
+        for (let i = 0; i < currentCaptchaCode.length; i++) {
+          const char = currentCaptchaCode[i];
+          const fontSize = Math.floor(Math.random() * 5 + 23); // 23px - 28px
+          const fontName = fonts[Math.floor(Math.random() * fonts.length)];
+          const color = charColors[Math.floor(Math.random() * charColors.length)];
+          const angle = (Math.random() - 0.5) * 0.45; // -13deg to +13deg
+
+          ctx.save();
+          ctx.font = `bold ${fontSize}px ${fontName}`;
+          ctx.fillStyle = color;
+          ctx.shadowColor = 'rgba(11, 29, 111, 0.15)';
+          ctx.shadowOffsetX = 1;
+          ctx.shadowOffsetY = 1;
+          ctx.shadowBlur = 1;
+
+          const x = (i + 1) * charSpacing;
+          const y = height / 2 + fontSize / 3.2;
+
+          ctx.translate(x, y);
+          ctx.rotate(angle);
+          ctx.fillText(char, -fontSize / 3.5, 0);
+          ctx.restore();
+        }
+      }
+
+      // Initial render
+      renderCaptcha();
+
+      // Refresh button event
+      if (refreshBtn) {
+        refreshBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          refreshBtn.classList.add('spinning');
+          renderCaptcha();
+          setTimeout(() => refreshBtn.classList.remove('spinning'), 500);
+          if (captchaInput) captchaInput.focus();
+        });
+      }
+
+      // Real-time validation indicator as user types
+      if (captchaInput) {
+        captchaInput.addEventListener('input', () => {
+          const val = captchaInput.value.trim().toUpperCase();
+          if (val.length === 6) {
+            if (val === currentCaptchaCode) {
+              captchaInput.classList.remove('is-invalid');
+              captchaInput.classList.add('is-valid');
+              if (captchaStatusIcon) {
+                captchaStatusIcon.className = 'captcha-status-icon valid';
+                captchaStatusIcon.innerHTML = '✓';
+              }
+              if (captchaError) {
+                captchaError.classList.remove('visible');
+                captchaError.textContent = '';
+              }
+            } else {
+              captchaInput.classList.remove('is-valid');
+              captchaInput.classList.add('is-invalid');
+              if (captchaStatusIcon) {
+                captchaStatusIcon.className = 'captcha-status-icon invalid';
+                captchaStatusIcon.innerHTML = '✗';
+              }
+            }
+          } else {
+            captchaInput.classList.remove('is-valid', 'is-invalid');
+            if (captchaStatusIcon) {
+              captchaStatusIcon.className = 'captcha-status-icon';
+              captchaStatusIcon.innerHTML = '';
+            }
+            if (captchaError) {
+              captchaError.classList.remove('visible');
+              captchaError.textContent = '';
+            }
+          }
+        });
+      }
+
+      function showFormAlert(type, message) {
+        if (!formAlertContainer || !formAlert) return;
+        formAlert.className = `form-alert ${type}`;
+        formAlert.innerHTML = message;
+        formAlertContainer.style.display = 'block';
+        formAlertContainer.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+
+      function hideFormAlert() {
+        if (!formAlertContainer) return;
+        formAlertContainer.style.display = 'none';
+      }
+
+      function setLoading(isLoading) {
+        if (!submitBtn) return;
+        submitBtn.disabled = isLoading;
+        if (btnText && btnSpinner) {
+          btnText.style.display = isLoading ? 'none' : 'inline';
+          btnSpinner.style.display = isLoading ? 'inline' : 'none';
+        }
+      }
+
+      // Direct fallback function: prepares and opens email directly to rajeshwariarekar7@gmail.com
+      function openEmailFallback(details, reasonNotice) {
+        const subject = encodeURIComponent(`BP LIFTS Elevator Enquiry: ${details.type} - ${details.name}`);
+        const body = encodeURIComponent(
+          `Dear BP LIFTS Team,\n\n` +
+          `I would like to request a quotation / consultation for elevator services in Pune:\n\n` +
+          `--- CLIENT & PROJECT DETAILS ---\n` +
+          `Full Name: ${details.name}\n` +
+          `Phone Number: ${details.phone}\n` +
+          `Email Address: ${details.email}\n` +
+          `Elevator Requirement: ${details.type}\n` +
+          `Building Type: ${details.building}\n` +
+          `Number of Floors: ${details.floors}\n` +
+          `Location in Pune: ${details.location}\n\n` +
+          `Project Requirements / Notes:\n${details.message}\n\n` +
+          `Please contact me at your earliest convenience.\n`
+        );
+
+        const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${TARGET_EMAIL}&su=${subject}&body=${body}`;
+        const mailtoUrl = `mailto:${TARGET_EMAIL}?subject=${subject}&body=${body}`;
+
+        const win = window.open(gmailUrl, '_blank');
+        if (!win) {
+          window.location.href = mailtoUrl;
+        }
+
+        showFormAlert(
+          'success',
+          `✓ <b>Thank you, ${details.name}!</b> Your elevator enquiry has been prepared and opened in your email to send directly to <b>${TARGET_EMAIL}</b>.<br><small style="opacity:0.9;">${reasonNotice || 'Please click Send in your email window to complete delivery.'}</small>`
+        );
+        form.reset();
+        renderCaptcha();
+        setLoading(false);
+      }
+
+      // Handle form submission
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        hideFormAlert();
+
+        // 1. CAPTCHA VERIFICATION
+        const enteredCaptcha = (captchaInput ? captchaInput.value : '').trim().toUpperCase();
+        if (!enteredCaptcha) {
+          if (captchaError) {
+            captchaError.textContent = 'Please enter the security verification code.';
+            captchaError.classList.add('visible');
+          }
+          if (captchaInput) {
+            captchaInput.classList.add('is-invalid');
+            captchaInput.focus();
+          }
+          return;
+        }
+
+        if (enteredCaptcha !== currentCaptchaCode) {
+          if (captchaError) {
+            captchaError.textContent = 'Incorrect security code. A new code has been generated. Please try again.';
+            captchaError.classList.add('visible');
+          }
+          if (captchaInput) {
+            captchaInput.classList.add('is-invalid');
+          }
+          renderCaptcha();
+          if (captchaInput) captchaInput.focus();
+          return;
+        }
+
+        // CAPTCHA is valid!
+        if (captchaInput) captchaInput.classList.add('is-valid');
+        if (captchaStatusIcon) {
+          captchaStatusIcon.className = 'captcha-status-icon valid';
+          captchaStatusIcon.innerHTML = '✓';
+        }
+        if (captchaError) captchaError.classList.remove('visible');
+
+        // 2. EXTRACT FORM VALUES
+        const nameVal = form.querySelector('[name="name"]')?.value.trim() || 'Client';
+        const phoneVal = form.querySelector('[name="phone"]')?.value.trim() || '';
+        const emailVal = form.querySelector('[name="email"]')?.value.trim() || 'Not specified';
+        const typeVal = form.querySelector('[name="type"]')?.value || 'General Elevator Enquiry';
+        const buildingVal = form.querySelector('[name="building"]')?.value || 'Not specified';
+        const floorsVal = form.querySelector('[name="floors"]')?.value || 'Not specified';
+        const locationVal = form.querySelector('[name="location"]')?.value.trim() || 'Pune';
+        const messageVal = form.querySelector('[name="message"]')?.value.trim() || 'No additional notes provided';
+
+        const enquiryData = {
+          name: nameVal,
+          phone: phoneVal,
+          email: emailVal,
+          type: typeVal,
+          building: buildingVal,
+          floors: floorsVal,
+          location: locationVal,
+          message: messageVal,
+          _subject: `New BP LIFTS Enquiry: ${typeVal} - ${nameVal}`,
+          _captcha: 'false',
+          _template: 'table'
+        };
+
+        setLoading(true);
+
+        // If page is viewed over local file:// protocol, FormSubmit API rejects file origins;
+        // immediately use the graceful email compose fallback to rajeshwariarekar7@gmail.com
+        if (window.location.protocol === 'file:') {
+          openEmailFallback(enquiryData, 'Local file preview detected. Email compose window opened.');
+          return;
+        }
+
+        // Otherwise (http: or https: web server / domain), send via FormSubmit AJAX API directly to rajeshwariarekar7@gmail.com
+        try {
+          const response = await fetch(`https://formsubmit.co/ajax/${TARGET_EMAIL}`, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'Accept': 'application/json'
+            },
+            body: JSON.stringify(enquiryData)
+          });
+
+          const data = await response.json();
+
+          if (response.ok && (data.success === 'true' || data.success === true)) {
+            showFormAlert(
+              'success',
+              `✓ <b>Thank you, ${nameVal}!</b> Your elevator enquiry has been sent successfully to <b>${TARGET_EMAIL}</b>. An engineer from BP LIFTS will contact you shortly.`
+            );
+            form.reset();
+            renderCaptcha();
+          } else {
+            console.warn('FormSubmit returned error status, using email fallback:', data);
+            openEmailFallback(enquiryData, 'Sent directly via email client to ensure instant delivery.');
+          }
+        } catch (error) {
+          console.warn('Network or CORS error submitting to FormSubmit, using email fallback:', error);
+          openEmailFallback(enquiryData, 'Sent directly via email client to ensure instant delivery.');
+        } finally {
+          setLoading(false);
+        }
+      });
+    })();
   </script>
 </body>
 
