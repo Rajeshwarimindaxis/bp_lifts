@@ -144,8 +144,15 @@ img {
 }
 
 @keyframes heroTextShimmer {
-    0%, 100% { background-position: 0% center; }
-    50% { background-position: 200% center; }
+
+    0%,
+    100% {
+        background-position: 0% center;
+    }
+
+    50% {
+        background-position: 200% center;
+    }
 }
 
 
@@ -251,8 +258,13 @@ img {
 }
 
 /* Hero entrance stagger delays */
-.hero h1.reveal-fade-up { transition-delay: 0.1s; }
-.hero p.reveal-fade-up { transition-delay: 0.22s; }
+.hero h1.reveal-fade-up {
+    transition-delay: 0.1s;
+}
+
+.hero p.reveal-fade-up {
+    transition-delay: 0.22s;
+}
 
 /* =====================================================
    SECTIONS & SECTION HEADERS
@@ -528,9 +540,12 @@ img {
 }
 
 @keyframes badgeLevitate {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: translateY(0);
     }
+
     50% {
         transform: translateY(-8px);
     }
@@ -685,8 +700,8 @@ img {
     padding: 20px 18px;
     box-shadow: 0 4px 14px rgba(11, 29, 111, 0.05);
     transition: transform 0.35s cubic-bezier(0.165, 0.84, 0.44, 1),
-                box-shadow 0.35s cubic-bezier(0.165, 0.84, 0.44, 1),
-                border-color 0.3s ease;
+        box-shadow 0.35s cubic-bezier(0.165, 0.84, 0.44, 1),
+        border-color 0.3s ease;
 }
 
 .feature:hover {
@@ -839,8 +854,8 @@ img {
     flex-direction: column;
     justify-content: space-between;
     transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1),
-                box-shadow 0.45s cubic-bezier(0.16, 1, 0.3, 1),
-                border-color 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+        box-shadow 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+        border-color 0.45s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* Vertical climbing elevator neon laser beam on hover */
@@ -986,6 +1001,7 @@ img {
     0% {
         transform: translateY(-5px) rotate(-6deg) scale(1.15);
     }
+
     100% {
         transform: translateY(-9px) rotate(6deg) scale(1.22);
     }
@@ -1040,10 +1056,10 @@ img {
     padding: 4px 8px;
     border-radius: 6px;
     transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
-                background 0.3s ease,
-                border-color 0.3s ease,
-                color 0.3s ease,
-                box-shadow 0.3s ease;
+        background 0.3s ease,
+        border-color 0.3s ease,
+        color 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
 .service-summary-card:hover .service-tag:nth-child(1) {
@@ -1091,9 +1107,12 @@ img {
 }
 
 @keyframes arrowNudgeLoop {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: translateX(0);
     }
+
     50% {
         transform: translateX(6px);
     }
@@ -1298,8 +1317,8 @@ img {
 .reveal-fade-up {
     opacity: 0;
     transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1),
-                transform 0.85s cubic-bezier(0.16, 1, 0.3, 1),
-                filter 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+        transform 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+        filter 0.85s cubic-bezier(0.16, 1, 0.3, 1);
     will-change: opacity, transform, filter;
     transition-delay: var(--reveal-delay, 0s);
 }
@@ -1336,10 +1355,21 @@ img {
 }
 
 /* Stagger delay helpers for grid children */
-.reveal-stagger-1 { transition-delay: 0.08s; }
-.reveal-stagger-2 { transition-delay: 0.16s; }
-.reveal-stagger-3 { transition-delay: 0.24s; }
-.reveal-stagger-4 { transition-delay: 0.32s; }
+.reveal-stagger-1 {
+    transition-delay: 0.08s;
+}
+
+.reveal-stagger-2 {
+    transition-delay: 0.16s;
+}
+
+.reveal-stagger-3 {
+    transition-delay: 0.24s;
+}
+
+.reveal-stagger-4 {
+    transition-delay: 0.32s;
+}
 
 /* Stats Card Hover Interaction */
 .stat-card {
@@ -2007,24 +2037,21 @@ img {
     }
 
     .about-home-grid {
-        grid-template-columns: 1fr 1.15fr;
-        gap: 12px;
-        align-items: stretch;
+        grid-template-columns: 1fr;
+        gap: 20px;
     }
 
     .about-home-media {
         display: flex;
         flex-direction: column;
         position: relative;
-        height: 100%;
+        width: 100%;
     }
 
     .about-home-img-wrap {
         position: relative;
         width: 100%;
-        height: 100%;
-        min-height: 180px;
-        flex: 1 1 auto;
+        height: 220px;
         border-radius: 12px;
         overflow: hidden;
     }
@@ -2041,106 +2068,103 @@ img {
 
     .about-experience-badge {
         position: absolute;
-        bottom: 8px;
-        left: 6px;
-        right: 6px;
+        bottom: 10px;
+        right: 10px;
+        left: auto;
         background: linear-gradient(135deg, rgba(11, 29, 111, 0.95) 0%, rgba(2, 100, 173, 0.95) 100%);
         color: #ffffff;
-        padding: 5px 6px;
-        border-radius: 8px;
+        padding: 7px 14px;
+        border-radius: 10px;
         box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
         border: 1.5px solid rgba(255, 255, 255, 0.45);
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 6px;
+        gap: 8px;
         z-index: 3;
         backdrop-filter: blur(6px);
     }
 
     .about-badge-number {
-        font-size: 16px;
+        font-size: 22px;
         font-weight: 800;
         line-height: 1;
         color: #ffffff;
     }
 
     .about-badge-text {
-        font-size: 7.5px;
+        font-size: 9px;
         font-weight: 700;
-        line-height: 1.15;
+        line-height: 1.25;
         color: #d8ecff;
         text-transform: uppercase;
-        letter-spacing: 0.3px;
+        letter-spacing: 0.4px;
     }
 
     .about-home-content {
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
-        height: 100%;
+        width: 100%;
     }
 
     .about-home-content .eyebrow {
-        font-size: 9.5px;
-        padding: 3px 8px;
-        margin-bottom: 4px;
+        font-size: 11px;
+        padding: 4px 10px;
+        margin-bottom: 8px;
         width: fit-content;
     }
 
     .about-home-content h2 {
-        font-size: clamp(12px, 3.4vw, 15px);
+        font-size: 19px;
         font-weight: 800;
-        line-height: 1.22;
-        margin: 0 0 4px 0;
+        line-height: 1.28;
+        margin: 0 0 8px 0;
         color: var(--bp-dark-blue);
         letter-spacing: -0.3px;
     }
 
     .about-home-lead {
-        font-size: 10px;
+        font-size: 13px;
         font-weight: 700;
-        line-height: 1.32;
-        margin: 0 0 4px 0;
+        line-height: 1.45;
+        margin: 0 0 8px 0;
         color: var(--bp-light-blue);
     }
 
     .about-home-p {
-        font-size: 9px;
-        line-height: 1.35;
-        margin: 0 0 6px 0;
+        font-size: 12.5px;
+        line-height: 1.6;
+        margin: 0 0 12px 0;
         color: var(--bp-text-muted);
-        display: -webkit-box;
-        -webkit-line-clamp: 3;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
+        display: block;
+        -webkit-line-clamp: unset;
     }
 
     .about-home-pills {
         display: grid !important;
         grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-        gap: 4px !important;
-        margin: 0 0 6px 0 !important;
+        gap: 6px !important;
+        margin: 0 0 14px 0 !important;
     }
 
     .about-pill-item {
         display: flex !important;
         align-items: center !important;
-        gap: 4px !important;
-        padding: 4px 5px !important;
-        border-radius: 6px !important;
-        font-size: 8.5px !important;
+        gap: 6px !important;
+        padding: 7px 9px !important;
+        border-radius: 8px !important;
+        font-size: 11px !important;
         font-weight: 700 !important;
         background: linear-gradient(135deg, #ffffff 0%, #edf5fc 100%) !important;
         border: 1px solid rgba(2, 100, 173, 0.22) !important;
         color: var(--bp-dark-blue) !important;
-        line-height: 1.15 !important;
+        line-height: 1.2 !important;
     }
 
     .about-pill-item span.pill-icon {
-        width: 14px !important;
-        height: 14px !important;
-        font-size: 8px !important;
+        width: 18px !important;
+        height: 18px !important;
+        font-size: 9px !important;
         display: inline-flex !important;
         align-items: center !important;
         justify-content: center !important;
@@ -2151,10 +2175,10 @@ img {
     }
 
     .about-home-actions {
-        display: grid !important;
-        grid-template-columns: 1fr 1fr !important;
-        gap: 6px !important;
-        margin-top: 2px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 8px !important;
+        margin-top: 4px !important;
         width: 100% !important;
     }
 
@@ -2164,13 +2188,12 @@ img {
         align-items: center !important;
         justify-content: center !important;
         width: 100% !important;
-        min-height: 32px !important;
-        padding: 4px 6px !important;
-        font-size: 9.5px !important;
+        min-height: 42px !important;
+        padding: 10px 14px !important;
+        font-size: 12.5px !important;
         font-weight: 700 !important;
-        border-radius: 5px !important;
+        border-radius: 6px !important;
         text-align: center !important;
-        white-space: nowrap !important;
         text-decoration: none !important;
         box-shadow: 0 3px 8px rgba(2, 100, 173, 0.2) !important;
     }
@@ -2187,14 +2210,6 @@ img {
         border: 1px solid #0264AD !important;
     }
 
-    .about-home-actions .btn-primary:hover {
-        background: #071552 !important;
-    }
-
-    .about-home-actions .btn-secondary:hover {
-        background: #014e88 !important;
-    }
-
     .cta-band {
         padding: 26px 18px;
     }
@@ -2206,51 +2221,151 @@ img {
     }
 }
 
-/* Base button rules for About Home section */
-.about-home-actions {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-.about-home-actions .btn,
-.about-home-actions .btn-secondary {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 44px;
-    padding: 10px 20px;
-    font-size: 13.5px;
-    font-weight: 700;
-    border-radius: 6px;
-    text-decoration: none;
-    cursor: pointer;
-    transition: all 0.25s ease;
-}
-
-.about-home-actions .btn-primary {
-    background: #0B1D6F !important;
-    color: #ffffff !important;
-    border: 1px solid #0B1D6F !important;
-}
-
-.about-home-actions .btn-secondary {
-    background: #0264AD !important;
-    color: #ffffff !important;
-    border: 1px solid #0264AD !important;
-}
-
-.about-home-actions .btn-primary:hover {
-    background: #071552 !important;
-}
-
-.about-home-actions .btn-secondary:hover {
-    background: #014e88 !important;
-}
-
 @media (max-width: 640px) {
     .hero {
-        min-height: 300px;
-        padding: 25px 0;
+        min-height: 320px;
+        padding: 30px 0;
+    }
+
+    .hero h1 {
+        font-size: clamp(1.65rem, 6.5vw, 2.2rem);
+        line-height: 1.2;
+        margin-bottom: 14px;
+    }
+
+    .hero p {
+        font-size: 13.5px;
+        line-height: 1.55;
+    }
+
+    .hero-trust-chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin-top: 14px;
+    }
+
+    .trust-chip {
+        font-size: 11px;
+        padding: 4px 10px;
+        border-radius: 16px;
+        background: rgba(2, 100, 173, 0.28);
+        border: 1px solid rgba(99, 194, 255, 0.45);
+        color: #ffffff;
+    }
+}
+
+@media (max-width: 480px) {
+    .products-slider-viewport:not(.is-grid) .card {
+        flex: 0 0 280px;
+        min-width: 280px;
+        max-width: 280px;
+    }
+
+    .products-carousel-toolbar {
+        flex-wrap: wrap;
+        gap: 8px 6px;
+    }
+}
+
+@media (max-width: 380px) {
+    .services-grid-home {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 8px !important;
+    }
+
+    .service-card-media {
+        height: 105px;
+    }
+
+    .service-card-body {
+        padding: 10px 8px !important;
+    }
+
+    .service-card-body h3 {
+        font-size: 12.5px !important;
+        margin-bottom: 4px !important;
+    }
+
+    .service-card-body p {
+        font-size: 10px !important;
+        line-height: 1.35 !important;
+        display: -webkit-box !important;
+        -webkit-line-clamp: 3 !important;
+        -webkit-box-orient: vertical !important;
+        overflow: hidden !important;
+    }
+
+    .safety-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 8px !important;
+    }
+
+    .safety-item {
+        padding: 8px 6px !important;
+        gap: 6px !important;
+    }
+
+    .safety-item .s-icon {
+        width: 22px !important;
+        height: 22px !important;
+        font-size: 10px !important;
+    }
+
+    .safety-item div b {
+        font-size: 11px !important;
+    }
+
+    .safety-item div span {
+        font-size: 9.5px !important;
+        line-height: 1.25 !important;
+    }
+
+    .feature-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 8px !important;
+    }
+
+    .feature {
+        padding: 10px 8px !important;
+        gap: 8px !important;
+    }
+
+    .feature h3 {
+        font-size: 11.5px !important;
+        margin-bottom: 2px !important;
+    }
+
+    .feature p {
+        font-size: 9.5px !important;
+        line-height: 1.3 !important;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 8px !important;
+    }
+
+    .stat-card {
+        padding: 10px 6px !important;
+    }
+
+    .stat-number {
+        font-size: 1.4rem !important;
+    }
+
+    .stat-label {
+        font-size: 10px !important;
+    }
+
+    .products-slider-viewport:not(.is-grid) .card {
+        flex: 0 0 250px;
+        min-width: 250px;
+        max-width: 250px;
+    }
+
+    .products-slider-viewport.is-grid .products-slider-track {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 8px !important;
     }
 }

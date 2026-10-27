@@ -571,19 +571,45 @@ p {
 
     .form-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 12px 8px;
+        gap: 12px 10px;
+    }
+
+    .form-group.full {
+        grid-column: 1 / -1;
     }
 
     .form-group label {
-        font-size: 12px;
+        font-size: 11.5px;
+        margin-bottom: 4px;
     }
 
     .form-group input,
     .form-group select,
     .form-group textarea {
         padding: 9px 10px;
-        font-size: 13px;
-        border-radius: 5px;
+        font-size: 12px;
+        border-radius: 6px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .form-group.full {
+        grid-column: 1 / -1;
+    }
+
+    .form-group label {
+        font-size: 12.5px;
+        margin-bottom: 5px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        padding: 11px 12px;
+        font-size: 13.5px;
+        border-radius: 6px;
+        width: 100%;
+        box-sizing: border-box;
     }
 
     .map-card iframe {
